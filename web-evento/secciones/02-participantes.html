@@ -2,31 +2,42 @@
 <section class="seccion a2-seccion" id="participantes">
   <div class="contenedor">
     <p class="eyebrow">CARTELERA</p>
-    <h2 class="titulo-seccion">PARTICIPANTES</h2>
-    <p class="subtitulo-seccion">¡SELECCIONA TU PARTICIPANTE!</p>
+    <h2 class="titulo-seccion">NUESTROS CHEFS</h2>
+    <p class="subtitulo-seccion">¡SELECCIONA TU CHEF FAVORITO!</p>
 
     <!-- Ficha destacada: se actualiza al hacer clic en la grilla -->
     <div class="a2-destacado tarjeta">
-      <div class="a2-foto-grande" id="a2-foto">P1</div>
-      <div>
-        <h3 class="a2-nombre" id="a2-nombre">PARTICIPANTE 1</h3>
+      <div class="a2-foto-grande" id="a2-foto" style="background-image: url('https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=800');"></div>
+      <div class="a2-info">
+        <h3 class="a2-nombre" id="a2-nombre">Chef Marco</h3>
         <p class="a2-pais" id="a2-pais">PERÚ</p>
-        <p class="a2-vs">VS <span id="a2-rival">PARTICIPANTE 2</span></p>
+        <p class="a2-vs">VS <span id="a2-rival">Ceviche</span></p>
+        <!-- Extra: Frase -->
+        <p class="a2-frase" id="a2-frase">"El secreto está en el amor al cocinar"</p>
       </div>
     </div>
 
-    <!-- Grilla: agrega o edita participantes aquí (data-* se usan en el JS) -->
+    <!-- Grilla de Participantes -->
     <div class="a2-grilla">
-      <button class="a2-item activo" data-nombre="Participante 1" data-pais="Perú" data-rival="Participante 2">P1</button>
-      <button class="a2-item" data-nombre="Participante 2" data-pais="México" data-rival="Participante 1">P2</button>
-      <button class="a2-item" data-nombre="Participante 3" data-pais="Colombia" data-rival="Participante 4">P3</button>
-      <button class="a2-item" data-nombre="Participante 4" data-pais="Argentina" data-rival="Participante 3">P4</button>
-      <button class="a2-item" data-nombre="Participante 5" data-pais="Chile" data-rival="Participante 6">P5</button>
-      <button class="a2-item" data-nombre="Participante 6" data-pais="España" data-rival="Participante 5">P6</button>
-      <button class="a2-item" data-nombre="Participante 7" data-pais="Ecuador" data-rival="Participante 8">P7</button>
-      <button class="a2-item" data-nombre="Participante 8" data-pais="Bolivia" data-rival="Participante 7">P8</button>
-      <button class="a2-item" data-nombre="Participante 9" data-pais="Uruguay" data-rival="Participante 10">P9</button>
-      <button class="a2-item" data-nombre="Participante 10" data-pais="Venezuela" data-rival="Participante 9">P10</button>
+      <button class="a2-item activo" data-nombre="Chef Marco" data-pais="Perú" data-rival="Ceviche" data-frase="El secreto está en el amor al cocinar" style="background-image:url('https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=400')">Chef Marco</button>
+      
+      <button class="a2-item" data-nombre="Chef Lucía" data-pais="Italia" data-rival="Pasta" data-frase="La pasta es mi lienzo" style="background-image:url('https://images.unsplash.com/photo-1583394838336-acd977736f90?w=400')">Chef Lucía</button>
+      
+      <button class="a2-item" data-nombre="Chef Kenji" data-pais="Japón" data-rival="Sushi" data-frase="La precisión lo es todo" style="background-image:url('https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=400')">Chef Kenji</button>
+      
+      <button class="a2-item" data-nombre="Chef Sofía" data-pais="Francia" data-rival="Croissant" data-frase="El arte de la repostería" style="background-image:url('https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=400')">Chef Sofía</button>
+      
+      <button class="a2-item" data-nombre="Chef Diego" data-pais="México" data-rival="Tacos" data-frase="El picante es vida" style="background-image:url('https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=400')">Chef Diego</button>
+      
+      <button class="a2-item" data-nombre="Chef Aisha" data-pais="India" data-rival="Curry" data-frase="Las especias cuentan historias" style="background-image:url('https://images.unsplash.com/photo-1583394838336-acd977736f90?w=400')">Chef Aisha</button>
+      
+      <button class="a2-item" data-nombre="Chef Oliver" data-pais="Reino Unido" data-rival="Fish and Chips" data-frase="Tradición y sabor" style="background-image:url('https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=400')">Chef Oliver</button>
+      
+      <button class="a2-item" data-nombre="Chef Chen" data-pais="China" data-rival="Pato Pekín" data-frase="El equilibrio perfecto" style="background-image:url('https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=400')">Chef Chen</button>
+      
+      <button class="a2-item" data-nombre="Chef Mateo" data-pais="Argentina" data-rival="Asado" data-frase="El fuego es mi aliado" style="background-image:url('https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=400')">Chef Mateo</button>
+      
+      <button class="a2-item" data-nombre="Chef Valeria" data-pais="España" data-rival="Paella" data-frase="Sabor del mar" style="background-image:url('https://images.unsplash.com/photo-1583394838336-acd977736f90?w=400')">Chef Valeria</button>
     </div>
   </div>
 </section>

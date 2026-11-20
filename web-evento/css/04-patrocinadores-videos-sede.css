@@ -1,0 +1,34 @@
+/* ALUMNO 4 - Patrocinadores + Videos + Sede. Usa solo clases .a4- */
+.a4-marcas { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 16px; }
+.a4-marca {
+  height: 90px; display: grid; place-items: center;
+  border: 1px solid rgba(244, 228, 201, .15); border-radius: 12px;
+  font-family: var(--fuente-titulo); font-weight: 700; color: var(--gris);
+  filter: grayscale(1); opacity: .7; transition: .25s;
+}
+.a4-marca:hover { filter: none; opacity: 1; color: var(--crema); border-color: var(--dorado); }
+
+.a4-videos { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+.a4-video { padding: 16px; text-align: center; cursor: pointer; transition: .25s; }
+.a4-video:hover { transform: translateY(-6px); }
+.a4-mini {
+  aspect-ratio: 16/9; border-radius: 10px; margin-bottom: 16px;
+  background: linear-gradient(135deg, var(--fondo-3), var(--rojo));
+  display: grid; place-items: center; font-size: 3rem;
+  background-size: cover; background-position: center;
+}
+.a4-video h3 { font-family: var(--fuente-titulo); margin-bottom: 12px; }
+
+.a4-modal { display: none; position: fixed; inset: 0; z-index: 100; background: rgba(0,0,0,.85); place-items: center; }
+.a4-modal.abierto { display: grid; }
+.a4-modal-caja { position: relative; width: min(900px, 92%); aspect-ratio: 16/9; background: #000; }
+.a4-modal-caja iframe { width: 100%; height: 100%; border: 0; }
+.a4-cerrar { position: absolute; top: -40px; right: 0; background: none; border: 0; color: #fff; font-size: 1.6rem; cursor: pointer; }
+
+.a4-sede { display: grid; grid-template-columns: 1fr 1.4fr; gap: 24px; }
+.a4-sede-datos { padding: 28px; display: flex; flex-direction: column; gap: 18px; }
+.a4-sede-datos small { color: var(--dorado); letter-spacing: 3px; }
+.a4-sede-datos p { font-family: var(--fuente-titulo); font-weight: 700; }
+.a4-mapa { width: 100%; min-height: 380px; border: 0; border-radius: var(--radio); filter: invert(.9) hue-rotate(180deg); }
+
+@media (max-width: 800px) { .a4-sede { grid-template-columns: 1fr; } }

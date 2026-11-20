@@ -1,0 +1,33 @@
+/* ALUMNO 2 - Participantes. Usa solo clases que empiecen con .a2- */
+.a2-destacado {
+  display: flex; align-items: center; gap: 40px;
+  padding: 30px; margin-bottom: 40px;
+}
+.a2-foto-grande {
+  width: 220px; height: 260px; flex-shrink: 0;
+  border-radius: var(--radio);
+  background: linear-gradient(160deg, var(--fondo-3), var(--rojo));
+  display: grid; place-items: center;
+  font-family: var(--fuente-titulo); font-size: 4rem; font-weight: 900;
+  background-size: cover; background-position: center;
+}
+.a2-nombre { font-family: var(--fuente-titulo); font-size: clamp(1.8rem, 4vw, 3rem); color: var(--dorado-claro); }
+.a2-pais { letter-spacing: 3px; color: var(--gris); margin-bottom: 20px; }
+.a2-vs { font-family: var(--fuente-titulo); font-size: 1.3rem; }
+.a2-vs span { color: var(--dorado); }
+
+.a2-grilla { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 14px; }
+.a2-item {
+  aspect-ratio: 1; cursor: pointer;
+  border-radius: 12px; border: 2px solid transparent;
+  background: var(--fondo-2); color: var(--crema);
+  font-family: var(--fuente-titulo); font-weight: 900; font-size: 1.3rem;
+  background-size: cover; background-position: center;
+  transition: .2s;
+}
+.a2-item:hover { transform: translateY(-4px); border-color: var(--dorado); }
+.a2-item.activo { border-color: var(--dorado-claro); box-shadow: 0 0 20px rgba(212, 162, 76, .5); }
+
+@media (max-width: 700px) {
+  .a2-destacado { flex-direction: column; text-align: center; }
+}

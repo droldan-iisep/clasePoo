@@ -1,0 +1,86 @@
+/* =========================================================
+   BASE.CSS - NO TOCAR (lo administra el profesor)
+   Variables y clases compartidas por todas las secciones.
+   ========================================================= */
+:root {
+  --fondo: #0a1024;          /* azul noche */
+  --fondo-2: #111a38;        /* tarjetas */
+  --fondo-3: #1a2550;
+  --crema: #f4e4c9;          /* texto principal */
+  --dorado: #d4a24c;         /* acento */
+  --dorado-claro: #f5d58a;
+  --rojo: #c8323c;
+  --azul: #3a6fd8;
+  --gris: #8a92ad;
+  --radio: 14px;
+  --ancho: 1200px;
+  --fuente-titulo: 'Cinzel', serif;
+  --fuente-texto: 'Inter', system-ui, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--fondo);
+  color: var(--crema);
+  font-family: var(--fuente-texto);
+  line-height: 1.6;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+/* Contenedor y secciones */
+.contenedor { width: min(var(--ancho), 92%); margin: 0 auto; }
+.seccion { padding: 90px 0; }
+
+/* Títulos de sección (estilo de la referencia) */
+.eyebrow {
+  font-family: var(--fuente-titulo);
+  color: var(--dorado);
+  letter-spacing: 4px;
+  font-size: .85rem;
+  text-align: center;
+}
+.titulo-seccion {
+  font-family: var(--fuente-titulo);
+  font-weight: 900;
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  text-align: center;
+  background: linear-gradient(180deg, var(--dorado-claro), var(--dorado));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.subtitulo-seccion {
+  font-family: var(--fuente-titulo);
+  text-align: center;
+  color: var(--gris);
+  font-size: .9rem;
+  letter-spacing: 2px;
+  margin: 10px auto 50px;
+  max-width: 700px;
+}
+
+/* Botón dorado */
+.btn {
+  display: inline-block;
+  font-family: var(--fuente-titulo);
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 12px 28px;
+  border: 1px solid var(--dorado);
+  border-radius: 999px;
+  color: var(--dorado-claro);
+  transition: .25s;
+}
+.btn:hover { background: var(--dorado); color: var(--fondo); }
+.centrado { text-align: center; margin-top: 40px; }
+
+/* Tarjeta genérica */
+.tarjeta {
+  background: linear-gradient(160deg, var(--fondo-2), var(--fondo));
+  border: 1px solid rgba(212, 162, 76, .25);
+  border-radius: var(--radio);
+}

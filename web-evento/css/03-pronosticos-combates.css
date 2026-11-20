@@ -5,14 +5,18 @@
 .a3-fila { display: flex; justify-content: space-between; font-family: var(--fuente-titulo); font-weight: 700; margin-bottom: 6px; }
 .a3-pa { color: var(--rojo); }
 .a3-pb { color: var(--azul); }
-.a3-barra { display: flex; height: 10px; border-radius: 999px; overflow: hidden; background: var(--fondo-3); margin: 12px 0 18px; }
-.a3-barra-a { background: var(--rojo); width: 50%; transition: width .8s; }
-.a3-barra-b { background: var(--azul); width: 50%; transition: width .8s; }
+.a3-barra { display: flex; height: 12px; border-radius: 999px; overflow: hidden; background: var(--fondo-3); margin: 12px 0 18px; }
+
+/* COLORES DE BARRAS CAMBIADOS (Degradado) */
+.a3-barra-a { background: linear-gradient(90deg, #ff0000, #ff8c00); width: 50%; transition: width .8s; }
+.a3-barra-b { background: linear-gradient(90deg, #1e90ff, #00bfff); width: 50%; transition: width .8s; }
+
 .a3-ganador { font-family: var(--fuente-titulo); font-size: .9rem; margin-bottom: 16px; }
 .a3-ganador strong { color: var(--dorado-claro); }
 .a3-ganador small { color: var(--gris); }
-.a3-votar { width: 100%; padding: 10px; border: 1px solid var(--dorado); background: transparent; color: var(--dorado-claro); font-family: var(--fuente-titulo); letter-spacing: 2px; border-radius: 999px; cursor: pointer; }
+.a3-votar { width: 100%; padding: 10px; border: 1px solid var(--dorado); background: transparent; color: var(--dorado-claro); font-family: var(--fuente-titulo); letter-spacing: 2px; border-radius: 999px; cursor: pointer; transition: 0.3s; }
 .a3-votar:hover { background: var(--dorado); color: var(--fondo); }
+.a3-votar:disabled { background: var(--dorado-claro); color: var(--fondo); cursor: not-allowed; opacity: 0.7; }
 
 .a3-combates { display: flex; flex-direction: column; gap: 16px; }
 .a3-combate {

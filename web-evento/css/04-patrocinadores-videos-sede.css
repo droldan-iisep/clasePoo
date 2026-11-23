@@ -1,45 +1,91 @@
-/* ALUMNO 4 - Patrocinadores + Videos + Sede (Temática: Restaurante Premium) */
+/* ================= ALUMNO 4 - CSS (Restaurante Premium) ================= */
 
-/* ==================== 1. PATROCINADORES (Carrusel) ==================== */
+/* ================= 1. PATROCINADORES ================= */
 .a4-marcas {
   display: flex;
   gap: 20px;
   overflow-x: auto;
   padding: 10px 0 20px;
-  scrollbar-width: none; /* Ocultar scroll en Firefox */
+  scrollbar-width: none; /* Oculta barra en Firefox */
 }
-.a4-marcas::-webkit-scrollbar { display: none; } /* Ocultar scroll en Chrome */
+.a4-marcas::-webkit-scrollbar { display: none; } /* Oculta en Chrome */
 
+/* Tarjeta de la marca (ahora es un enlace <a>) */
 .a4-marca {
-  flex: 0 0 200px;
-  height: 110px;
+  flex: 0 0 180px; /* Ancho de cada tarjeta */
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column; /* Nombre arriba, imagen abajo */
+  border-radius: 12px;
+  overflow: hidden; /* Para que la imagen respete los bordes redondeados */
   background: var(--fondo-2);
   border: 1px solid rgba(244, 228, 201, 0.1);
-  border-radius: 16px;
-  filter: grayscale(1);
-  opacity: 0.6;
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   cursor: pointer;
+  text-decoration: none; /* Quita el subrayado azul de los enlaces */
+  position: relative;
 }
 
 .a4-marca:hover {
-  filter: grayscale(0);
-  opacity: 1;
-  border-color: var(--dorado);
   transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(212, 162, 76, 0.15);
+  border-color: var(--dorado);
+  box-shadow: 0 15px 30px rgba(212, 162, 76, 0.3);
 }
 
+/* El nombre de la marca (Parte superior) */
+.a4-marca-nombre {
+  background: rgba(15, 23, 42, 0.9); /* Fondo oscuro elegante */
+  color: var(--dorado-claro); /* Texto dorado */
+  font-family: var(--fuente-titulo);
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 12px 5px;
+  letter-spacing: 1px;
+  border-bottom: 1px solid rgba(212, 162, 76, 0.3);
+  transition: all 0.3s ease;
+}
+
+.a4-marca:hover .a4-marca-nombre {
+  background: var(--dorado);
+  color: var(--fondo);
+}
+
+/* La imagen de la marca (Parte inferior) */
 .a4-marca img {
-  max-width: 75%;
-  max-height: 65%;
-  object-fit: contain;
+  width: 100%;
+  height: 120px; /* Altura fija para la foto */
+  object-fit: cover; /* Llena todo el espacio sin deformarse */
+  transition: transform 0.4s ease;
 }
 
-/* ==================== 2. VIDEOS (Galería) ==================== */
+.a4-marca:hover img {
+  transform: scale(1.1); /* Efecto de zoom */
+}
+
+/* El botón de "Visitar sitio web" (oculto por defecto) */
+.a4-ver-mas {
+  display: block;
+  width: 100%;
+  background: rgba(212, 162, 76, 0.1);
+  color: var(--dorado);
+  text-align: center;
+  font-size: 0.75rem;
+  padding: 8px 0;
+  opacity: 0; /* Oculto */
+  transform: translateY(10px); /* Un poco abajo */
+  transition: all 0.3s ease;
+}
+
+/* Aparece al pasar el mouse */
+.a4-marca:hover .a4-ver-mas {
+  opacity: 1;
+  transform: translateY(0);
+  background: var(--dorado);
+  color: var(--fondo);
+}
+
+
+/* ================= 2. VIDEOS ================= */
 .a4-videos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -67,7 +113,7 @@
   aspect-ratio: 16/9;
   border-radius: 12px;
   margin-bottom: 20px;
-  background: linear-gradient(135deg, var(--fondo-3), var(--fondo-2));
+  background-color: var(--fondo-3);
   display: grid;
   place-items: center;
   font-size: 3rem;
@@ -76,10 +122,8 @@
   background-position: center;
   transition: all 0.4s;
   position: relative;
-  overflow: hidden;
 }
 
-/* Efecto de oscurecimiento y botón de Play al pasar el mouse */
 .a4-video:hover .a4-mini {
   transform: scale(1.03);
   text-shadow: 0 0 20px var(--dorado);
@@ -98,13 +142,14 @@
   padding: 8px 20px;
 }
 
-/* ==================== 3. MODAL DEL VIDEO ==================== */
+
+/* ================= 3. MODAL DEL VIDEO ================= */
 .a4-modal {
   display: none;
   position: fixed;
   inset: 0;
   z-index: 1000;
-  background: rgba(10, 16, 36, 0.95); /* Fondo oscuro elegante */
+  background: rgba(10, 16, 36, 0.95);
   backdrop-filter: blur(8px);
   place-items: center;
   opacity: 0;
@@ -156,7 +201,8 @@
   transform: rotate(90deg);
 }
 
-/* ==================== 4. SEDE (Mapa y Datos) ==================== */
+
+/* ================= 4. SEDE (Mapa y Datos) ================= */
 .a4-sede {
   display: grid;
   grid-template-columns: 1fr 1.4fr;
@@ -194,8 +240,7 @@
   min-height: 400px;
   border: 0;
   border-radius: var(--radio);
-  /* Filtro para que el mapa combine con la temática oscura */
-  filter: invert(0.9) hue-rotate(180deg) contrast(1.1);
+  filter: invert(0.9) hue-rotate(180deg) contrast(1.1); /* Filtro oscuro para el mapa */
   transition: filter 0.3s;
 }
 
@@ -203,7 +248,8 @@
   filter: invert(0.85) hue-rotate(180deg) contrast(1);
 }
 
-/* ==================== RESPONSIVE ==================== */
+
+/* ================= 5. RESPONSIVE ================= */
 @media (max-width: 800px) {
   .a4-sede {
     grid-template-columns: 1fr;

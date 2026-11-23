@@ -57,7 +57,7 @@
   text-align: center;
   background-image:
     linear-gradient(rgba(10, 16, 36, .65), rgba(10, 16, 36, .85)),
-    url('https://www.peru.travel/es/inspirate/conoce-algunos-de-los-restaurantes-peruanos-de-lujo-mas-reconocidos-en-el-mundo');
+    src('https://www.peru.travel/es/inspirate/conoce-algunos-de-los-restaurantes-peruanos-de-lujo-mas-reconocidos-en-el-mundo');
   background-size: cover;
   background-position: center;
 }

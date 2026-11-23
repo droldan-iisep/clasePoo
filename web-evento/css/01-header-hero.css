@@ -57,9 +57,10 @@
   text-align: center;
   background-image:
     linear-gradient(rgba(10, 16, 36, .4), rgba(10, 16, 36, .6)),
-    src('https://www.peru.travel/es/inspirate/conoce-algunos-de-los-restaurantes-peruanos-de-lujo-mas-reconocidos-en-el-mundo');
+    url('https://images.unsplash.com/photo-1552566626-52f8b828add9?w=1920&q=80');
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
 .a1-hero-overlay {
   position: absolute; inset: 0;

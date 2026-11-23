@@ -6,25 +6,75 @@
   border-bottom: 1px solid rgba(212, 162, 76, .2);
 }
 .a1-nav { display: flex; align-items: center; justify-content: space-between; height: 70px; }
-.a1-logo { font-family: var(--fuente-titulo); font-weight: 900; letter-spacing: 3px; color: var(--dorado-claro); }
-.a1-links { display: flex; gap: 28px; }
-.a1-links a { font-family: var(--fuente-titulo); font-weight: 700; font-size: .85rem; letter-spacing: 2px; text-transform: uppercase; transition: .2s; }
-.a1-links a:hover { color: var(--dorado); }
-.a1-menu-btn { display: none; background: none; border: 0; color: var(--crema); font-size: 1.6rem; cursor: pointer; }
-
-.a1-hero {
-  position: relative; min-height: 90vh; display: grid; place-items: center; text-align: center;
-  /* Cambia esta imagen: pon tu foto en img/alumno1/ */
-  background: radial-gradient(circle at 50% 30%, #2a3a7a, var(--fondo) 70%);
-  background-size: cover; background-position: center;
+.a1-logo {
+  font-family: var(--fuente-titulo);
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: var(--dorado-claro);
+  font-size: 1.15rem;
 }
-.a1-hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, var(--fondo)); }
+.a1-links { display: flex; gap: 28px; align-items: center; }
+.a1-links a {
+  font-family: var(--fuente-titulo);
+  font-weight: 700;
+  font-size: .85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: .2s;
+}
+.a1-links a:hover { color: var(--dorado); }
+.a1-menu-btn {
+  display: none;
+  background: none;
+  border: 0;
+  color: var(--crema);
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+/* Botón de red social */
+.a1-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 14px;
+  border: 1px solid var(--dorado);
+  border-radius: 999px;
+  color: var(--dorado-claro) !important;
+  font-size: .8rem !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase;
+  transition: .3s;
+}
+.a1-social:hover { background: var(--dorado); color: var(--fondo) !important; }
+
+/* HERO */
+.a1-hero {
+  position: relative;
+  min-height: 90vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background-image:
+    linear-gradient(rgba(10, 16, 36, .65), rgba(10, 16, 36, .85)),
+    url('https://www.peru.travel/es/inspirate/conoce-algunos-de-los-restaurantes-peruanos-de-lujo-mas-reconocidos-en-el-mundo');
+  background-size: cover;
+  background-position: center;
+}
+.a1-hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 40%, var(--fondo));
+}
 .a1-hero-contenido { position: relative; padding: 60px 0; }
 .a1-titulo {
-  font-family: var(--fuente-titulo); font-weight: 900; line-height: 1;
+  font-family: var(--fuente-titulo);
+  font-weight: 900;
+  line-height: 1;
   font-size: clamp(3rem, 10vw, 7rem);
   background: linear-gradient(180deg, var(--dorado-claro), var(--dorado));
-  -webkit-background-clip: text; background-clip: text; color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
   margin: 10px 0 20px;
 }
 .a1-titulo span { font-size: 1.3em; }
@@ -34,13 +84,39 @@
 .a1-datos strong { display: block; font-family: var(--fuente-titulo); font-size: 1.2rem; }
 .a1-datos small { color: var(--dorado); letter-spacing: 2px; text-transform: uppercase; }
 
-.a1-contador { display: flex; justify-content: center; gap: 14px; margin-bottom: 35px; }
-.a1-contador div { background: var(--fondo-2); border: 1px solid var(--dorado); border-radius: 10px; padding: 12px 18px; min-width: 80px; }
-.a1-contador span { display: block; font-family: var(--fuente-titulo); font-size: 2rem; font-weight: 900; color: var(--dorado-claro); }
-.a1-contador small { font-size: .7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gris); }
+.a1-contador { display: flex; justify-content: center; gap: 14px; margin-bottom: 35px; flex-wrap: wrap; }
+.a1-contador div {
+  background: var(--fondo-2);
+  border: 1px solid var(--dorado);
+  border-radius: 10px;
+  padding: 12px 18px;
+  min-width: 80px;
+}
+.a1-contador span {
+  display: block;
+  font-family: var(--fuente-titulo);
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--dorado-claro);
+}
+.a1-contador small {
+  font-size: .7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gris);
+}
 
 @media (max-width: 768px) {
   .a1-menu-btn { display: block; }
-  .a1-links { display: none; position: absolute; top: 70px; left: 0; right: 0; flex-direction: column; background: var(--fondo); padding: 20px; text-align: center; }
+  .a1-links {
+    display: none;
+    position: absolute;
+    top: 70px; left: 0; right: 0;
+    flex-direction: column;
+    background: var(--fondo);
+    padding: 20px;
+    text-align: center;
+    gap: 18px;
+  }
   .a1-links.abierto { display: flex; }
 }

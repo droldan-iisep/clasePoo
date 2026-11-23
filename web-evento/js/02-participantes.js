@@ -1,25 +1,29 @@
-// ALUMNO 2 - Seleccionar participante y mostrarlo en la ficha destacada
-(() => {
-  const items = document.querySelectorAll('.a2-item');
-  
-  items.forEach(item => {
-    item.addEventListener('click', () => {
-      // Quitar activo a todos y poner al clickeado
-      items.forEach(i => i.classList.remove('activo'));
-      item.classList.add('activo');
-      
-      // Actualizar textos
-      document.getElementById('a2-nombre').textContent = item.dataset.nombre.toUpperCase();
-      document.getElementById('a2-pais').textContent = item.dataset.pais.toUpperCase();
-      document.getElementById('a2-rival').textContent = item.dataset.rival.toUpperCase();
-      
-      // ACTUALIZAR EL EXTRA (LA FRASE)
-      document.getElementById('a2-frase').textContent = `"${item.dataset.frase}"`;
-      
-      // Actualizar foto
-      const foto = document.getElementById('a2-foto');
-      foto.textContent = ""; // Borra el texto de la foto (P1, P2, etc) para que se vea la imagen
-      foto.style.backgroundImage = item.style.backgroundImage;
-    });
-  });
-})();
+// ALUMNO 2 - Controlador de Participantes (Delegación de Eventos)
+document.addEventListener('click', function(e) {
+  const btn = e.target.closest('.a2-item');
+  if (!btn) return;
+
+  const todosLosBotones = document.querySelectorAll('.a2-item');
+  todosLosBotones.forEach(function(b) { b.classList.remove('activo'); });
+  btn.classList.add('activo');
+
+  const nombre = btn.getAttribute('data-nombre');
+  const pais = btn.getAttribute('data-pais');
+  const rival = btn.getAttribute('data-rival');
+  const frase = btn.getAttribute('data-frase');
+  const fotoUrl = btn.style.backgroundImage;
+
+  const elNombre = document.getElementById('a2-nombre');
+  const elPais = document.getElementById('a2-pais');
+  const elRival = document.getElementById('a2-rival');
+  const elFrase = document.getElementById('a2-frase');
+  const elBadge = document.getElementById('a2-badge-pais');
+  const elFoto = document.getElementById('a2-foto');
+
+  if (elNombre) elNombre.textContent = nombre.toUpperCase();
+  if (elPais) elPais.textContent = pais.toUpperCase();
+  if (elRival) elRival.textContent = rival.toUpperCase();
+  if (elFrase) elFrase.textContent = '"' + frase + '"';
+  if (elBadge) elBadge.textContent = pais.toUpperCase();
+  if (elFoto && fotoUrl) elFoto.style.backgroundImage = fotoUrl;
+});

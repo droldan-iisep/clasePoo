@@ -2,7 +2,14 @@
 (() => {
   const btn = document.querySelector('.a1-menu-btn');
   const links = document.querySelector('.a1-links');
-  if (btn) btn.addEventListener('click', () => links.classList.toggle('abierto'));
+  if (btn && links) {
+    btn.addEventListener('click', () => {
+      links.classList.toggle('abierto');
+      const abierto = links.classList.contains('abierto');
+      btn.textContent = abierto ? '✕' : '☰';
+      btn.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
+    });
+  }
 
   const contador = document.querySelector('.a1-contador');
   if (!contador) return;

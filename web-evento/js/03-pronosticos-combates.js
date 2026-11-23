@@ -1,58 +1,31 @@
-// ALUMNO 3 - Barras de porcentaje animadas + botón votar
-(() => {
-  // Seleccionamos TODAS las tarjetas y TODOS los botones de votar
-  const tarjetas = document.querySelectorAll('.a3-pron');
-  const botonesVotar = document.querySelectorAll('.a3-votar');
-  let yaVoto = false; // Bandera para controlar que solo vote 1 vez
+// Función para votar (se llama desde el HTML)
+window.votarPlato = function(boton) {
+  // Si el botón ya está desactivado, no hacer nada
+  if (boton.disabled) return;
 
-  tarjetas.forEach(card => {
-    // Animación inicial de carga
-    let a = Number(card.dataset.a);
-    let b = Number(card.dataset.b);
-    
-    const barraA = card.querySelector('.a3-barra-a');
-    const barraB = card.querySelector('.a3-barra-b');
-    const textoA = card.querySelector('.a3-pa');
-    const textoB = card.querySelector('.a3-pb');
-    const btn = card.querySelector('.a3-votar');
+  // 1. Lógica para sumar 1% al plato seleccionado
+  const tarjeta = boton.closest('.a3-plato-card');
+  const porcA = tarjeta.querySelector('.a3-porc-a');
+  const barraA = tarjeta.querySelector('.a3-barra-a');
 
-    // Animación de entrada
-    setTimeout(() => {
-      barraA.style.width = a + '%';
-      barraB.style.width = b + '%';
-    }, 300);
+  // Extraemos el número actual (ej. "85%" -> 85)
+  let valorActual = parseInt(porcA.textContent);
+  
+  // Sumamos 1% (sin pasar de 100)
+  if (valorActual < 100) {
+    valorActual++;
+    porcA.textContent = valorActual + "%";
+    barraA.style.width = valorActual + "%";
+  }
 
-    // Lógica del botón VOTAR (Extra)
-    btn.addEventListener('click', () => {
-      // Si ya votó en otra tarjeta, no lo dejamos votar de nuevo
-      if (yaVoto) return;
-      
-      // Marcamos que ya votó
-      yaVoto = true;
+  // 2. Cambiamos el texto del botón
+  boton.textContent = "¡GRACIAS POR TU VOTO!";
 
-      // Sumamos 1% al lado A para simular el voto
-      a += 1;
-      if (a > 100) { a = 100; } else { b -= 1; }
-
-      // Actualizamos la interfaz de ESTA tarjeta
-      barraA.style.width = a + '%';
-      barraB.style.width = b + '%';
-      textoA.textContent = a + '%';
-      textoB.textContent = b + '%';
-
-      // Feedback al usuario en la tarjeta elegida
-      btn.textContent = '¡VOTO REGISTRADO!';
-      btn.disabled = true;
-
-      // Bloqueamos el resto de botones para que no vote en otra tarjeta
-      botonesVotar.forEach(otroBtn => {
-        if (otroBtn !== btn) {
-          otroBtn.disabled = true;
-          otroBtn.textContent = 'VOTACIÓN CERRADA';
-          otroBtn.style.opacity = '0.3';
-          otroBtn.style.cursor = 'not-allowed';
-        }
-      });
-    });
+  // 3. Bloqueamos TODOS los botones de votar de la página
+  const todosLosBotones = document.querySelectorAll('.a3-btn-votar');
+  todosLosBotones.forEach(function(b) {
+    b.disabled = true;
+    b.style.opacity = '0.5';
+    b.style.cursor = 'not-allowed';
   });
-})();
+};

@@ -1,43 +1,86 @@
-<!-- ===================== ALUMNO 2: PARTICIPANTES ===================== -->
+<!-- ===================== ALUMNO 2: PARTICIPANTES (NIVEL DIOS) ===================== -->
 <section class="seccion a2-seccion" id="participantes">
   <div class="contenedor">
-    <p class="eyebrow">CARTELERA</p>
-    <h2 class="titulo-seccion">NUESTROS CHEFS</h2>
-    <p class="subtitulo-seccion">¡SELECCIONA TU CHEF FAVORITO!</p>
+    
+    <div class="a2-header">
+      <p class="eyebrow">CARTELERA OFICIAL</p>
+      <h2 class="titulo-seccion">NUESTROS CHEFS</h2>
+      <p class="subtitulo-seccion">Selecciona un chef para ver sus detalles, su país y su platillo estrella.</p>
+    </div>
 
-    <!-- Ficha destacada: se actualiza al hacer clic en la grilla -->
-    <div class="a2-destacado tarjeta">
-      <div class="a2-foto-grande" id="a2-foto" style="background-image: url('https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=800');"></div>
+    <!-- FICHA DESTACADA PREMIUM -->
+    <div class="a2-destacado tarjeta" id="a2-panel">
+      <div class="a2-luz-ambiente" id="a2-luz"></div> <!-- Luz dinámica -->
+      
+      <div class="a2-foto-wrapper">
+        <div class="a2-foto-grande" id="a2-foto" style="background-image: url('https://i.pravatar.cc/800?img=11');"></div>
+        <div class="a2-badge-pais" id="a2-badge-pais">PERÚ</div>
+      </div>
+      
       <div class="a2-info">
-        <h3 class="a2-nombre" id="a2-nombre">Chef Marco</h3>
+        <h3 class="a2-nombre" id="a2-nombre">CHEF MARCO</h3>
         <p class="a2-pais" id="a2-pais">PERÚ</p>
-        <p class="a2-vs">VS <span id="a2-rival">Ceviche</span></p>
-        <!-- Extra: Frase -->
+        <div class="a2-vs-container">
+          <span class="a2-vs-label">PLATO ESTRELLA</span>
+          <span class="a2-rival" id="a2-rival">CEVICHE</span>
+        </div>
         <p class="a2-frase" id="a2-frase">"El secreto está en el amor al cocinar"</p>
       </div>
     </div>
 
-    <!-- Grilla de Participantes -->
-    <div class="a2-grilla">
-      <button class="a2-item activo" data-nombre="Chef Marco" data-pais="Perú" data-rival="Ceviche" data-frase="El secreto está en el amor al cocinar" style="background-image:url('https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=400')">Chef Marco</button>
+    <!-- GRILLA DE BOTONES -->
+    <div class="a2-grilla" id="a2-grilla">
+      <button class="a2-item activo" data-nombre="Chef Marco" data-pais="Perú" data-rival="Ceviche" data-frase="El secreto está en el amor al cocinar" style="background-image:url('https://i.pravatar.cc/400?img=11')">Chef Marco</button>
       
-      <button class="a2-item" data-nombre="Chef Lucía" data-pais="Italia" data-rival="Pasta" data-frase="La pasta es mi lienzo" style="background-image:url('https://images.unsplash.com/photo-1583394838336-acd977736f90?w=400')">Chef Lucía</button>
+      <button class="a2-item" data-nombre="Chef Lucía" data-pais="Italia" data-rival="Pasta" data-frase="La pasta es mi lienzo" style="background-image:url('https://i.pravatar.cc/400?img=5')">Chef Lucía</button>
       
-      <button class="a2-item" data-nombre="Chef Kenji" data-pais="Japón" data-rival="Sushi" data-frase="La precisión lo es todo" style="background-image:url('https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=400')">Chef Kenji</button>
+      <button class="a2-item" data-nombre="Chef Kenji" data-pais="Japón" data-rival="Sushi" data-frase="La precisión lo es todo" style="background-image:url('https://i.pravatar.cc/400?img=12')">Chef Kenji</button>
       
-      <button class="a2-item" data-nombre="Chef Sofía" data-pais="Francia" data-rival="Croissant" data-frase="El arte de la repostería" style="background-image:url('https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=400')">Chef Sofía</button>
+      <button class="a2-item" data-nombre="Chef Sofía" data-pais="Francia" data-rival="Croissant" data-frase="El arte de la repostería" style="background-image:url('https://i.pravatar.cc/400?img=9')">Chef Sofía</button>
       
-      <button class="a2-item" data-nombre="Chef Diego" data-pais="México" data-rival="Tacos" data-frase="El picante es vida" style="background-image:url('https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=400')">Chef Diego</button>
+      <button class="a2-item" data-nombre="Chef Diego" data-pais="México" data-rival="Tacos" data-frase="El picante es vida" style="background-image:url('https://i.pravatar.cc/400?img=13')">Chef Diego</button>
       
-      <button class="a2-item" data-nombre="Chef Aisha" data-pais="India" data-rival="Curry" data-frase="Las especias cuentan historias" style="background-image:url('https://images.unsplash.com/photo-1583394838336-acd977736f90?w=400')">Chef Aisha</button>
+      <button class="a2-item" data-nombre="Chef Aisha" data-pais="India" data-rival="Curry" data-frase="Las especias cuentan historias" style="background-image:url('https://i.pravatar.cc/400?img=16')">Chef Aisha</button>
       
-      <button class="a2-item" data-nombre="Chef Oliver" data-pais="Reino Unido" data-rival="Fish and Chips" data-frase="Tradición y sabor" style="background-image:url('https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=400')">Chef Oliver</button>
+      <button class="a2-item" data-nombre="Chef Oliver" data-pais="Reino Unido" data-rival="Fish and Chips" data-frase="Tradición y sabor" style="background-image:url('https://i.pravatar.cc/400?img=14')">Chef Oliver</button>
       
-      <button class="a2-item" data-nombre="Chef Chen" data-pais="China" data-rival="Pato Pekín" data-frase="El equilibrio perfecto" style="background-image:url('https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=400')">Chef Chen</button>
+      <button class="a2-item" data-nombre="Chef Chen" data-pais="China" data-rival="Pato Pekín" data-frase="El equilibrio perfecto" style="background-image:url('https://i.pravatar.cc/400?img=15')">Chef Chen</button>
       
-      <button class="a2-item" data-nombre="Chef Mateo" data-pais="Argentina" data-rival="Asado" data-frase="El fuego es mi aliado" style="background-image:url('https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=400')">Chef Mateo</button>
+      <button class="a2-item" data-nombre="Chef Mateo" data-pais="Argentina" data-rival="Asado" data-frase="El fuego es mi aliado" style="background-image:url('https://i.pravatar.cc/400?img=17')">Chef Mateo</button>
       
-      <button class="a2-item" data-nombre="Chef Valeria" data-pais="España" data-rival="Paella" data-frase="Sabor del mar" style="background-image:url('https://images.unsplash.com/photo-1583394838336-acd977736f90?w=400')">Chef Valeria</button>
+      <button class="a2-item" data-nombre="Chef Valeria" data-pais="España" data-rival="Paella" data-frase="Sabor del mar" style="background-image:url('https://i.pravatar.cc/400?img=10')">Chef Valeria</button>
     </div>
   </div>
 </section>
+
+<!-- JS INCRUSTADO (Misma lógica de delegación para asegurar el clic) -->
+<script>
+  document.addEventListener('click', function(e) {
+    const btn = e.target.closest('.a2-item');
+    if (!btn) return;
+
+    const todosLosBotones = document.querySelectorAll('.a2-item');
+    todosLosBotones.forEach(function(b) { b.classList.remove('activo'); });
+    btn.classList.add('activo');
+
+    const nombre = btn.getAttribute('data-nombre');
+    const pais = btn.getAttribute('data-pais');
+    const rival = btn.getAttribute('data-rival');
+    const frase = btn.getAttribute('data-frase');
+    const fotoUrl = btn.style.backgroundImage;
+
+    const elNombre = document.getElementById('a2-nombre');
+    const elPais = document.getElementById('a2-pais');
+    const elRival = document.getElementById('a2-rival');
+    const elFrase = document.getElementById('a2-frase');
+    const elBadge = document.getElementById('a2-badge-pais');
+    const elFoto = document.getElementById('a2-foto');
+
+    if (elNombre) elNombre.textContent = nombre.toUpperCase();
+    if (elPais) elPais.textContent = pais.toUpperCase();
+    if (elRival) elRival.textContent = rival.toUpperCase();
+    if (elFrase) elFrase.textContent = '"' + frase + '"';
+    if (elBadge) elBadge.textContent = pais.toUpperCase();
+    if (elFoto && fotoUrl) elFoto.style.backgroundImage = fotoUrl;
+  });
+</script>

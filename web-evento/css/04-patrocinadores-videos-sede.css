@@ -113,6 +113,7 @@
 }
 .a4-marcas::-webkit-scrollbar { display: none; }
 
+/* Tarjeta de la marca (ahora es un enlace <a>) */
 .a4-marca {
   flex: 0 0 180px;
   display: flex;
@@ -177,6 +178,12 @@
   color: var(--fondo);
 }
 
+.a4-marca:hover .a4-marca-nombre {
+  background: var(--dorado);
+  color: var(--fondo);
+}
+
+/* La imagen de la marca (Parte inferior) */
 .a4-marca img {
   width: 100%;
   height: 120px;

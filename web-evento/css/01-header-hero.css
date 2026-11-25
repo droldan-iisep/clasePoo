@@ -21,6 +21,7 @@
   letter-spacing: 2px;
   text-transform: uppercase;
   transition: .2s;
+  color:white
 }
 .a1-links a:hover { color: var(--dorado); }
 .a1-menu-btn {

@@ -1,50 +1,251 @@
-/* ALUMNO 4 - Patrocinadores + Videos + Sede (Temática: Restaurante Premium) */
+/* ================= ALUMNO 4 - CSS (Restaurante Súper Pro) ================= */
 
-/* ==================== 1. PATROCINADORES (Carrusel) ==================== */
+/* ================= 1. MENÚ DEL RESTAURANTE ================= */
+.a4-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.a4-plato {
+  overflow: hidden;
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  background: var(--fondo-2);
+  border: 1px solid rgba(244, 228, 201, 0.1);
+  border-radius: var(--radio);
+  position: relative;
+}
+
+/* Efecto "Tinta Reveladora" */
+.a4-plato::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 50%, rgba(212, 162, 76, 0.2) 50%);
+  background-size: 200% 200%;
+  background-position: 100% 100%;
+  transition: background-position 0.5s ease;
+  z-index: 5;
+  pointer-events: none;
+}
+.a4-plato:hover::before {
+  background-position: 0% 0%;
+}
+
+.a4-plato:hover {
+  transform: translateY(-10px);
+  border-color: var(--dorado);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(212, 162, 76, 0.2);
+}
+
+.a4-plato-img {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+}
+
+.a4-plato:hover .a4-plato-img {
+  transform: scale(1.1);
+}
+
+/* EFECTO CRISTAL (Glassmorphism) */
+.a4-plato-info {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: rgba(17, 26, 56, 0.75) !important;
+  backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(212, 162, 76, 0.3);
+  position: relative;
+  z-index: 6;
+}
+
+/* EFECTO CARTA DE LUJO (Puntitos) */
+.a4-plato-info h3 {
+  font-family: var(--fuente-titulo);
+  font-size: 1.4rem;
+  color: var(--crema);
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.a4-plato-info h3::after {
+  content: '...........................';
+  flex: 1;
+  overflow: hidden;
+  color: rgba(212, 162, 76, 0.3);
+  margin: 0 10px;
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
+
+.a4-plato-desc {
+  color: var(--gris);
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  flex: 1;
+}
+
+.a4-plato-precio {
+  font-family: var(--fuente-titulo);
+  font-size: 1.3rem;
+  color: var(--dorado);
+  font-weight: 800;
+  text-align: right;
+}
+
+
+/* ================= 2. PATROCINADORES ================= */
 .a4-marcas {
   display: flex;
   gap: 20px;
   overflow-x: auto;
   padding: 10px 0 20px;
-  scrollbar-width: none; /* Ocultar scroll en Firefox */
+  scrollbar-width: none;
+  perspective: 1000px;
 }
-.a4-marcas::-webkit-scrollbar { display: none; } /* Ocultar scroll en Chrome */
+.a4-marcas::-webkit-scrollbar { display: none; }
 
 .a4-marca {
-  flex: 0 0 200px;
-  height: 110px;
+  flex: 0 0 180px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  border-radius: 12px;
+  overflow: hidden;
   background: var(--fondo-2);
   border: 1px solid rgba(244, 228, 201, 0.1);
-  border-radius: 16px;
-  filter: grayscale(1);
-  opacity: 0.6;
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+/* Efecto "Copa de Vino" (Borde de Oro Líquido) */
+.a4-marca::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 2px;
+  background: linear-gradient(45deg, transparent, var(--dorado), transparent, var(--dorado), transparent);
+  background-size: 300% 300%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  animation: goldFlow 3s linear infinite;
+}
+.a4-marca:hover::after {
+  opacity: 1;
+}
+
+@keyframes goldFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
 }
 
 .a4-marca:hover {
-  filter: grayscale(0);
-  opacity: 1;
-  border-color: var(--dorado);
-  transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(212, 162, 76, 0.15);
+  transform: rotateY(10deg) rotateX(5deg) scale(1.05);
+  box-shadow: -10px 10px 20px rgba(0,0,0,0.5), 0 0 20px rgba(212, 162, 76, 0.3);
+}
+
+.a4-marca-nombre {
+  background: rgba(15, 23, 42, 0.9);
+  color: var(--dorado-claro);
+  font-family: var(--fuente-titulo);
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 12px 5px;
+  letter-spacing: 1px;
+  border-bottom: 1px solid rgba(212, 162, 76, 0.3);
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.a4-marca:hover .a4-marca-nombre {
+  background: var(--dorado);
+  color: var(--fondo);
 }
 
 .a4-marca img {
-  max-width: 75%;
-  max-height: 65%;
-  object-fit: contain;
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  z-index: 1;
 }
 
-/* ==================== 2. VIDEOS (Galería) ==================== */
+.a4-marca:hover img {
+  transform: scale(1.15);
+}
+
+.a4-ver-mas {
+  display: block;
+  width: 100%;
+  background: rgba(212, 162, 76, 0.1);
+  color: var(--dorado);
+  text-align: center;
+  font-size: 0.75rem;
+  padding: 8px 0;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.a4-marca:hover .a4-ver-mas {
+  background: var(--dorado);
+  color: var(--fondo);
+}
+
+/* TÍTULO CON DEGRADADO ANIMADO */
+@keyframes gradientText {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+#patrocinadores .titulo-seccion, 
+#menu .titulo-seccion,
+#videos .titulo-seccion,
+#sede .titulo-seccion {
+  background: linear-gradient(90deg, var(--dorado-claro), #fff, var(--dorado), var(--dorado-claro));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientText 4s linear infinite;
+  text-shadow: none;
+}
+
+
+/* ================= 3. VIDEOS ================= */
 .a4-videos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
   margin-top: 30px;
+  transition: all 0.4s ease;
+}
+
+.a4-videos:hover .a4-video {
+  transform: scale(0.95);
+  opacity: 0.7;
+}
+
+.a4-videos .a4-video:hover {
+  transform: scale(1.05);
+  opacity: 1;
+  z-index: 10;
+  border-color: var(--dorado);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(212, 162, 76, 0.2);
 }
 
 .a4-video {
@@ -55,19 +256,32 @@
   background: linear-gradient(160deg, var(--fondo-2), var(--fondo));
   border: 1px solid rgba(212, 162, 76, 0.15);
   border-radius: var(--radio);
+  box-shadow: inset 0 0 0 1px rgba(212, 162, 76, 0.2), 0 10px 20px rgba(0,0,0,0.3);
+  position: relative;
+  overflow: hidden;
 }
 
-.a4-video:hover {
-  transform: translateY(-10px);
-  border-color: var(--dorado);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+/* Efecto "Proyector de Cine" */
+.a4-video::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 50%;
+  width: 0; height: 0;
+  background: radial-gradient(circle at bottom, rgba(212, 162, 76, 0.4) 0%, transparent 70%);
+  transform: translateX(-50%);
+  transition: width 0.5s ease, height 0.5s ease;
+  z-index: 0;
+  pointer-events: none;
+}
+.a4-video:hover::before {
+  width: 200%; height: 200%;
 }
 
 .a4-mini {
   aspect-ratio: 16/9;
   border-radius: 12px;
   margin-bottom: 20px;
-  background: linear-gradient(135deg, var(--fondo-3), var(--fondo-2));
+  background-color: var(--fondo-3);
   display: grid;
   place-items: center;
   font-size: 3rem;
@@ -77,11 +291,11 @@
   transition: all 0.4s;
   position: relative;
   overflow: hidden;
+  z-index: 2;
 }
 
-/* Efecto de oscurecimiento y botón de Play al pasar el mouse */
 .a4-video:hover .a4-mini {
-  transform: scale(1.03);
+  transform: scale(1.05);
   text-shadow: 0 0 20px var(--dorado);
 }
 
@@ -91,20 +305,25 @@
   color: var(--crema);
   margin-bottom: 15px;
   letter-spacing: 1px;
+  position: relative;
+  z-index: 2;
 }
 
 .a4-video .btn {
   font-size: 0.85rem;
   padding: 8px 20px;
+  position: relative;
+  z-index: 2;
 }
 
-/* ==================== 3. MODAL DEL VIDEO ==================== */
+
+/* ================= 4. MODAL DEL VIDEO ================= */
 .a4-modal {
   display: none;
   position: fixed;
   inset: 0;
   z-index: 1000;
-  background: rgba(10, 16, 36, 0.95); /* Fondo oscuro elegante */
+  background: rgba(10, 16, 36, 0.95);
   backdrop-filter: blur(8px);
   place-items: center;
   opacity: 0;
@@ -123,17 +342,29 @@
   background: #000;
   border-radius: 16px;
   border: 2px solid var(--dorado);
-  box-shadow: 0 25px 60px rgba(0,0,0,0.8);
-  overflow: hidden;
   transform: scale(0.9);
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+@keyframes borderGlow {
+  0% { box-shadow: 0 0 10px rgba(212, 162, 76, 0.3); }
+  50% { box-shadow: 0 0 30px rgba(212, 162, 76, 0.8), inset 0 0 10px rgba(212, 162, 76, 0.5); }
+  100% { box-shadow: 0 0 10px rgba(212, 162, 76, 0.3); }
 }
 
 .a4-modal.abierto .a4-modal-caja {
   transform: scale(1);
+  animation: borderGlow 2s infinite alternate;
 }
 
 .a4-modal-caja iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   border: 0;
@@ -149,6 +380,7 @@
   font-size: 2rem;
   cursor: pointer;
   transition: 0.3s;
+  z-index: 10;
 }
 
 .a4-cerrar:hover {
@@ -156,7 +388,8 @@
   transform: rotate(90deg);
 }
 
-/* ==================== 4. SEDE (Mapa y Datos) ==================== */
+
+/* ================= 5. SEDE (Mapa y Datos) ================= */
 .a4-sede {
   display: grid;
   grid-template-columns: 1fr 1.4fr;
@@ -189,21 +422,75 @@
   margin-top: 5px;
 }
 
+.a4-sede-datos .btn {
+  background: var(--dorado);
+  color: var(--fondo);
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.a4-sede-datos .btn:hover {
+  box-shadow: 0 0 15px var(--dorado);
+  transform: translateY(-2px);
+}
+
+/* Mapa con "Visión Nocturna Interactiva" */
 .a4-mapa {
   width: 100%;
   min-height: 400px;
-  border: 0;
+  border: 2px solid transparent;
   border-radius: var(--radio);
-  /* Filtro para que el mapa combine con la temática oscura */
-  filter: invert(0.9) hue-rotate(180deg) contrast(1.1);
-  transition: filter 0.3s;
+  filter: invert(0.9) hue-rotate(180deg) contrast(1.1) sepia(0.3) hue-rotate(-30deg) saturate(1.5);
+  transition: all 0.5s ease;
 }
 
 .a4-mapa:hover {
-  filter: invert(0.85) hue-rotate(180deg) contrast(1);
+  filter: invert(0.85) hue-rotate(180deg) contrast(1) sepia(0) hue-rotate(0deg) saturate(1);
+  border-color: var(--dorado);
+  box-shadow: 0 0 20px rgba(212, 162, 76, 0.5);
 }
 
-/* ==================== RESPONSIVE ==================== */
+
+/* ================= 6. BOTÓN FLOTANTE ================= */
+.a4-btn-flotante {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--gradient-epic);
+  color: #fff;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 50px;
+  font-family: var(--fuente-titulo);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  z-index: 999;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: floatBtn 3s ease-in-out infinite;
+}
+
+@keyframes floatBtn {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.a4-btn-flotante:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(212, 162, 76, 0.4);
+}
+
+
+/* ================= 7. RESPONSIVE ================= */
 @media (max-width: 800px) {
   .a4-sede {
     grid-template-columns: 1fr;

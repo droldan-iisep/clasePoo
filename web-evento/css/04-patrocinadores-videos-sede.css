@@ -1,5 +1,45 @@
 /* ================= ALUMNO 4 - CSS (Restaurante Súper Pro) ================= */
 
+/* ================= 0. FONDO ELEGANTE CON TEXTURAS ================= */
+#menu, 
+#patrocinadores, 
+#videos, 
+#sede {
+  background-color: #0a1024;
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(212, 162, 76, 0.1), transparent 40%),
+    radial-gradient(circle at 85% 30%, rgba(58, 111, 216, 0.1), transparent 40%),
+    repeating-linear-gradient(45deg, rgba(212, 162, 76, 0.03) 0px, rgba(212, 162, 76, 0.03) 1px, transparent 1px, transparent 10px),
+    repeating-linear-gradient(-45deg, rgba(212, 162, 76, 0.03) 0px, rgba(212, 162, 76, 0.03) 1px, transparent 1px, transparent 10px),
+    linear-gradient(135deg, #070b1a 0%, #0f172a 50%, #0a1024 100%);
+  background-attachment: fixed;
+  border-top: 1px solid rgba(212, 162, 76, 0.2);
+  border-bottom: 1px solid rgba(212, 162, 76, 0.2);
+  position: relative;
+  z-index: 1;
+  box-shadow: inset 0 0 100px rgba(0,0,0,0.5); 
+}
+
+#menu::before, 
+#patrocinadores::before, 
+#videos::before, 
+#sede::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(212, 162, 76, 0.15) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.4;
+  z-index: -1;
+  pointer-events: none;
+  animation: flotarTextura 20s linear infinite;
+}
+
+@keyframes flotarTextura {
+  0% { background-position: 0 0; }
+  100% { background-position: 40px 40px; }
+}
+
 /* ================= 1. MENÚ DEL RESTAURANTE ================= */
 .a4-menu-grid {
   display: grid;
@@ -19,7 +59,6 @@
   position: relative;
 }
 
-/* Efecto "Tinta Reveladora" */
 .a4-plato::before {
   content: '';
   position: absolute;
@@ -52,7 +91,6 @@
   transform: scale(1.1);
 }
 
-/* EFECTO CRISTAL (Glassmorphism) */
 .a4-plato-info {
   padding: 20px;
   flex: 1;
@@ -65,7 +103,6 @@
   z-index: 6;
 }
 
-/* EFECTO CARTA DE LUJO (Puntitos) */
 .a4-plato-info h3 {
   font-family: var(--fuente-titulo);
   font-size: 1.4rem;
@@ -128,7 +165,6 @@
   transform-style: preserve-3d;
 }
 
-/* Efecto "Copa de Vino" (Borde de Oro Líquido) */
 .a4-marca::after {
   content: '';
   position: absolute;
@@ -144,9 +180,7 @@
   transition: opacity 0.3s ease;
   animation: goldFlow 3s linear infinite;
 }
-.a4-marca:hover::after {
-  opacity: 1;
-}
+.a4-marca:hover::after { opacity: 1; }
 
 @keyframes goldFlow {
   0% { background-position: 0% 50%; }
@@ -206,7 +240,6 @@
   color: var(--fondo);
 }
 
-/* TÍTULO CON DEGRADADO ANIMADO */
 @keyframes gradientText {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -261,7 +294,6 @@
   overflow: hidden;
 }
 
-/* Efecto "Proyector de Cine" */
 .a4-video::before {
   content: '';
   position: absolute;
@@ -438,7 +470,6 @@
   transform: translateY(-2px);
 }
 
-/* Mapa con "Visión Nocturna Interactiva" */
 .a4-mapa {
   width: 100%;
   min-height: 400px;

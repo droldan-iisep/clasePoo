@@ -82,7 +82,7 @@
 .a1-descripcion { color: var(--gris); max-width: 520px; margin: 0 auto 30px; }
 
 .a1-datos { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-bottom: 30px; }
-.a1-datos strong { display: block; font-family: var(--fuente-titulo); font-size: 1.2rem; }
+.a1-datos strong { display: block; font-family: var(--fuente-titulo); font-size: 1.2rem; color:white}
 .a1-datos small { color: var(--dorado); letter-spacing: 2px; text-transform: uppercase; }
 
 .a1-contador { display: flex; justify-content: center; gap: 14px; margin-bottom: 35px; flex-wrap: wrap; }

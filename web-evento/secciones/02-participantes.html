@@ -5,55 +5,65 @@
     <div class="a2-header">
       <p class="eyebrow">CARTELERA OFICIAL</p>
       <h2 class="titulo-seccion">NUESTROS CHEFS</h2>
-      <p class="subtitulo-seccion">Selecciona un chef para ver sus detalles, su país y su platillo estrella.</p>
+      <p class="subtitulo-seccion">Selecciona un chef para ver sus detalles, su distrito y su platillo estrella.</p>
     </div>
 
     <!-- FICHA DESTACADA PREMIUM -->
     <div class="a2-destacado tarjeta" id="a2-panel">
-      <div class="a2-luz-ambiente" id="a2-luz"></div> <!-- Luz dinámica -->
+      <div class="a2-luz-ambiente" id="a2-luz"></div>
       
       <div class="a2-foto-wrapper">
-        <div class="a2-foto-grande" id="a2-foto" style="background-image: url('https://i.pravatar.cc/800?img=11');"></div>
-        <div class="a2-badge-pais" id="a2-badge-pais">PERÚ</div>
+        <div class="a2-foto-grande" id="a2-foto" style="background-image: url('img/chef-gaston.jpg');"></div>
+        <div class="a2-badge-pais" id="a2-badge-pais">MIRAFLORES</div>
       </div>
       
       <div class="a2-info">
-        <h3 class="a2-nombre" id="a2-nombre">CHEF MARCO</h3>
-        <p class="a2-pais" id="a2-pais">PERÚ</p>
+        <h3 class="a2-nombre" id="a2-nombre">GASTÓN ACURIO</h3>
+        <p class="a2-pais" id="a2-pais">MIRAFLORES</p>
         <div class="a2-vs-container">
           <span class="a2-vs-label">PLATO ESTRELLA</span>
           <span class="a2-rival" id="a2-rival">CEVICHE</span>
         </div>
-        <p class="a2-frase" id="a2-frase">"El secreto está en el amor al cocinar"</p>
+        <p class="a2-frase" id="a2-frase">"La cocina peruana es el motor de nuestra identidad"</p>
       </div>
     </div>
 
     <!-- GRILLA DE BOTONES -->
     <div class="a2-grilla" id="a2-grilla">
-      <button class="a2-item activo" data-nombre="Chef Marco" data-pais="Perú" data-rival="Ceviche" data-frase="El secreto está en el amor al cocinar" style="background-image:url('https://i.pravatar.cc/400?img=11')">Chef Marco</button>
+      <!-- 1. Gastón Acurio (Miraflores - Astrid & Gastón) -->
+      <button class="a2-item activo" data-nombre="Gastón Acurio" data-pais="Miraflores" data-rival="Ceviche" data-frase="La cocina peruana es el motor de nuestra identidad" style="background-image:url('img/chef-gaston.jpg')">Gastón Acurio</button>
       
-      <button class="a2-item" data-nombre="Chef Lucía" data-pais="Italia" data-rival="Pasta" data-frase="La pasta es mi lienzo" style="background-image:url('https://i.pravatar.cc/400?img=5')">Chef Lucía</button>
+      <!-- 2. Teresa Izquierdo (Lince - Nació ahí) -->
+      <button class="a2-item" data-nombre="Teresa Izquierdo" data-pais="Lince" data-rival="Ají de Gallina" data-frase="El secreto está en el amor y la sazón" style="background-image:url('img/chef-teresa.jpg')">Teresa Izquierdo</button>
       
-      <button class="a2-item" data-nombre="Chef Kenji" data-pais="Japón" data-rival="Sushi" data-frase="La precisión lo es todo" style="background-image:url('https://i.pravatar.cc/400?img=12')">Chef Kenji</button>
+      <!-- 3. Mitsuharu Tsumura (Miraflores - Maido) -->
+      <button class="a2-item" data-nombre="Mitsuharu Tsumura" data-pais="Miraflores" data-rival="Nikkei" data-frase="La fusión es el arte de crear nuevos sabores" style="background-image:url('img/chef-mitsuharu.jpg')">Mitsuharu Tsumura</button>
       
-      <button class="a2-item" data-nombre="Chef Sofía" data-pais="Francia" data-rival="Croissant" data-frase="El arte de la repostería" style="background-image:url('https://i.pravatar.cc/400?img=9')">Chef Sofía</button>
+      <!-- 4. Astrid Gutsche (Miraflores - Astrid & Gastón) -->
+      <button class="a2-item" data-nombre="Astrid Gutsche" data-pais="Miraflores" data-rival="Suspiro a la Limeña" data-frase="La repostería es pura magia y precisión" style="background-image:url('img/chef-astrid.jpg')">Astrid Gutsche</button>
       
-      <button class="a2-item" data-nombre="Chef Diego" data-pais="México" data-rival="Tacos" data-frase="El picante es vida" style="background-image:url('https://i.pravatar.cc/400?img=13')">Chef Diego</button>
+      <!-- 5. Virgilio Martínez (Barranco - Central) -->
+      <button class="a2-item" data-nombre="Virgilio Martínez" data-pais="Barranco" data-rival="Cocina de Altura" data-frase="Cada ingrediente cuenta una historia de nuestro territorio" style="background-image:url('img/chef-virgilio.jpg')">Virgilio Martínez</button>
       
-      <button class="a2-item" data-nombre="Chef Aisha" data-pais="India" data-rival="Curry" data-frase="Las especias cuentan historias" style="background-image:url('https://i.pravatar.cc/400?img=16')">Chef Aisha</button>
+      <!-- 6. Pía León (Barranco - Kjolle) -->
+      <button class="a2-item" data-nombre="Pía León" data-pais="Barranco" data-rival="Kjolle" data-frase="La elegancia está en la sencillez de los sabores" style="background-image:url('img/chef-pia.jpg')">Pía León</button>
       
-      <button class="a2-item" data-nombre="Chef Oliver" data-pais="Reino Unido" data-rival="Fish and Chips" data-frase="Tradición y sabor" style="background-image:url('https://i.pravatar.cc/400?img=14')">Chef Oliver</button>
+      <!-- 7. Pedro Miguel Schiaffino (San Isidro - Malabar) -->
+      <button class="a2-item" data-nombre="Pedro Miguel Schiaffino" data-pais="San Isidro" data-rival="Paiche" data-frase="La Amazonía es el futuro de la cocina" style="background-image:url('img/chef-pedro.jpg')">Pedro M. Schiaffino</button>
       
-      <button class="a2-item" data-nombre="Chef Chen" data-pais="China" data-rival="Pato Pekín" data-frase="El equilibrio perfecto" style="background-image:url('https://i.pravatar.cc/400?img=15')">Chef Chen</button>
+      <!-- 8. Héctor Solís (Surquillo - Picantería) -->
+      <button class="a2-item" data-nombre="Héctor Solís" data-pais="Surquillo" data-rival="Cocina Nikkei" data-frase="El mar nos da los mejores ingredientes" style="background-image:url('img/chef-hector.jpg')">Héctor Solís</button>
       
-      <button class="a2-item" data-nombre="Chef Mateo" data-pais="Argentina" data-rival="Asado" data-frase="El fuego es mi aliado" style="background-image:url('https://i.pravatar.cc/400?img=17')">Chef Mateo</button>
+      <!-- 9. Rafael Osterling (Miraflores - Rafael) -->
+      <button class="a2-item" data-nombre="Rafael Osterling" data-pais="Miraflores" data-rival="Rafael" data-frase="La tradición y la vanguardia van de la mano" style="background-image:url('img/chef-rafael.jpg')">Rafael Osterling</button>
       
-      <button class="a2-item" data-nombre="Chef Valeria" data-pais="España" data-rival="Paella" data-frase="Sabor del mar" style="background-image:url('https://i.pravatar.cc/400?img=10')">Chef Valeria</button>
+      <!-- 10. Grimanesa Vargas (Miraflores - Anticuchos) -->
+      <button class="a2-item" data-nombre="Grimanesa Vargas" data-pais="Miraflores" data-rival="Anticuchos" data-frase="El secreto está en la paciencia y el buen adobo" style="background-image:url('img/chef-grimanesa.jpg')">Grimanesa Vargas</button>
     </div>
   </div>
 </section>
 
-<!-- JS INCRUSTADO (Misma lógica de delegación para asegurar el clic) -->
+<!-- JS INCRUSTADO -->
 <script>
   document.addEventListener('click', function(e) {
     const btn = e.target.closest('.a2-item');

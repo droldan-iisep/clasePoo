@@ -1,28 +1,130 @@
-/* ALUMNO 5 - Horarios + FAQ + Footer. Usa solo clases .a5- */
-.a5-tu-hora { text-align: center; font-family: var(--fuente-titulo); margin-bottom: 30px; }
-.a5-tu-hora strong { color: var(--dorado-claro); font-size: 1.6rem; }
+/* =========== ALUMNO 5: CSS =========== */
 
-.a5-horarios { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px; }
-.a5-hora { padding: 22px; text-align: center; position: relative; }
-.a5-hora strong { display: block; font-family: var(--fuente-titulo); font-size: 2.2rem; color: var(--dorado-claro); }
-.a5-hora small { color: var(--dorado); letter-spacing: 2px; }
-.a5-hora p { font-size: .8rem; color: var(--gris); margin-top: 8px; letter-spacing: 1px; }
-.a5-hora.sede { border-color: var(--dorado); box-shadow: 0 0 25px rgba(212, 162, 76, .3); }
-.a5-hora span { position: absolute; top: 10px; right: 12px; font-size: .65rem; background: var(--dorado); color: var(--fondo); padding: 2px 8px; border-radius: 999px; font-weight: 700; }
-.a5-nota { text-align: center; font-size: .75rem; color: var(--gris); margin-top: 24px; letter-spacing: 1px; }
+/* Horarios */
+.a5-tu-hora {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
 
-.a5-faq { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
-.a5-faq details { background: var(--fondo-2); border: 1px solid rgba(212, 162, 76, .25); border-radius: 12px; padding: 18px 22px; }
-.a5-faq summary { font-family: var(--fuente-titulo); font-weight: 700; cursor: pointer; list-style: none; display: flex; justify-content: space-between; }
-.a5-faq summary::after { content: '+'; color: var(--dorado); font-size: 1.3rem; }
-.a5-faq details[open] summary::after { content: '−'; }
-.a5-faq details p { margin-top: 12px; color: var(--gris); }
+.a5-horarios {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+    justify-content: center;
+}
 
-.a5-footer { border-top: 1px solid rgba(212, 162, 76, .25); padding: 50px 0 20px; background: #070b1a; }
-.a5-footer-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px; }
-.a5-footer-logo { font-family: var(--fuente-titulo); font-weight: 900; font-size: 1.4rem; color: var(--dorado-claro); margin-bottom: 14px; }
-.a5-redes { display: flex; gap: 18px; flex-wrap: wrap; }
-.a5-redes a, .a5-footer-grid a { font-family: var(--fuente-titulo); font-size: .85rem; transition: .2s; }
-.a5-redes a:hover, .a5-footer-grid a:hover { color: var(--dorado); }
-.a5-footer small { color: var(--dorado); letter-spacing: 2px; }
-.a5-copy { text-align: center; font-size: .75rem; color: var(--gris); margin-top: 40px; letter-spacing: 1px; }
+.a5-hora {
+    background: var(--color-fondo-oscuro, #1a1a1a);
+    color: var(--color-texto-claro, #ffffff);
+    padding: 20px 15px;
+    border-radius: 8px;
+    flex: 1;
+    min-width: 160px;
+    text-align: center;
+    border: 1px solid #333;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.a5-hora.sede {
+    border: 2px solid var(--color-acento, #ffcc00);
+    position: relative;
+}
+
+.a5-hora.sede span {
+    display: block;
+    background: var(--color-acento, #ffcc00);
+    color: #000;
+    font-weight: bold;
+    font-size: 0.8rem;
+    padding: 2px 5px;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+
+.a5-hora strong {
+    display: block;
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.a5-nota {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* FAQ */
+.a5-faq details {
+    margin-bottom: 10px;
+    background: #f4f4f4;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    border-left: 4px solid var(--color-acento, #ffcc00);
+    transition: background 0.3s;
+}
+
+.a5-faq details:hover {
+    background: #e9e9e9;
+}
+
+.a5-faq summary {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.a5-faq p {
+    margin-top: 10px;
+    color: #444;
+    line-height: 1.5;
+}
+
+/* Footer */
+.a5-footer {
+    background: #111;
+    color: #eee;
+    padding: 40px 0 20px;
+    margin-top: 50px;
+}
+
+.a5-footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.a5-footer-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.a5-redes {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.a5-redes a {
+    color: #eee;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.a5-redes a:hover {
+    color: var(--color-acento, #ffcc00);
+}
+
+.a5-copy {
+    text-align: center;
+    font-size: 0.8rem;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    margin-top: 20px;
+    opacity: 0.6;
+}

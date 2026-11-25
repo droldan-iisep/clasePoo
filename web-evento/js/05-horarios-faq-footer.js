@@ -1,18 +1,50 @@
-// ALUMNO 5 - Calcula la hora de inicio en cada país + año del footer
-(() => {
-  // Hora de inicio del evento en UTC (12:00 Perú = 17:00 UTC)
-  const inicioUTC = new Date('2026-07-25T17:00:00Z');
-  const dos = n => String(n).padStart(2, '0');
+document.addEventListener("DOMContentLoaded", function() {
+    
+    // --- TAREA 1 y 2: Calcular horas locales y por país ---
+    const actualizarHora = () => {
+        const ahora = new Date();
+        
+        // 1. Tu hora local
+        const localSpan = document.getElementById("a5-local");
+        if (localSpan) {
+            localSpan.textContent = ahora.toLocaleTimeString();
+        }
 
-  document.querySelectorAll('.a5-hora').forEach(card => {
-    const offset = Number(card.dataset.utc);
-    const h = (inicioUTC.getUTCHours() + offset + 24) % 24;
-    card.querySelector('strong').textContent = `${dos(h)}:${dos(inicioUTC.getUTCMinutes())}`;
-  });
+        // 2. Horas por país (leyendo el data-utc del HTML)
+        const tarjetasHora = document.querySelectorAll('.a5-hora');
+        tarjetasHora.forEach(tarjeta => {
+            const utcOffset = parseInt(tarjeta.getAttribute('data-utc'));
+            
+            const horaUTC = ahora.getTime() + (ahora.getTimezoneOffset() * 60000);
+            const horaPais = new Date(horaUTC + (3600000 * utcOffset));
+            
+            const strong = tarjeta.querySelector('strong');
+            if (strong) {
+                strong.textContent = horaPais.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            }
+        });
+    };
 
-  const local = document.getElementById('a5-local');
-  if (local) local.textContent = `${dos(inicioUTC.getHours())}:${dos(inicioUTC.getMinutes())}`;
+    setInterval(actualizarHora, 1000);
+    actualizarHora();
 
-  const anio = document.getElementById('a5-anio');
-  if (anio) anio.textContent = new Date().getFullYear();
-})();
+    // --- TAREA 5 EXTRA: Solo una pregunta del FAQ abierta a la vez ---
+    const detalles = document.querySelectorAll('.a5-faq details');
+    detalles.forEach(detalle => {
+        detalle.addEventListener('toggle', function() {
+            if (this.open) {
+                detalles.forEach(otroDetalle => {
+                    if (otroDetalle !== this) {
+                        otroDetalle.removeAttribute('open');
+                    }
+                });
+            }
+        });
+    });
+
+    // --- Extra: Actualizar el año del footer automáticamente ---
+    const anioSpan = document.getElementById("a5-anio");
+    if (anioSpan) {
+        anioSpan.textContent = new Date().getFullYear();
+    }
+});

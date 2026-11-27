@@ -1,86 +1,247 @@
-<!-- ============== ALUMNO 3: PRONÓSTICOS + COMBATES ============== -->
+<!-- ============== ALUMNO 3: DUELO DE SABORES Y COMBOS ============== -->
+
+<!-- SECCIÓN 1: DUELO DE SABORES -->
 <section class="seccion a3-seccion" id="pronosticos">
   <div class="contenedor">
     <p class="eyebrow">COMUNIDAD</p>
-    <h2 class="titulo-seccion">PRONÓSTICOS</h2>
-    <p class="subtitulo-seccion">ASÍ VOTÓ LA COMUNIDAD CADA COMBATE</p>
+    <h2 class="titulo-seccion">DUELO DE SABORES</h2>
+    <p class="subtitulo-seccion">VOTA POR TU PLATO FAVORITO DE "MI GRAN EVENTO"</p>
 
-    <div class="a3-pronosticos">
-      <!-- Tarjeta de pronóstico: data-a y data-b son los porcentajes -->
-      <article class="a3-pron tarjeta" data-a="57" data-b="43">
-        <p class="a3-votos">PRONÓSTICO · 150 MIL VOTOS</p>
-        <div class="a3-fila"><span>PARTICIPANTE 1</span><b class="a3-pa">57%</b></div>
-        <div class="a3-fila"><span>PARTICIPANTE 2</span><b class="a3-pb">43%</b></div>
-        <div class="a3-barra"><div class="a3-barra-a"></div><div class="a3-barra-b"></div></div>
-        <p class="a3-ganador">GANADOR: <strong>PARTICIPANTE 2</strong><br><small>DECISIÓN DIVIDIDA (4-1)</small></p>
-        <button class="a3-votar">VOTAR</button>
-      </article>
+    <div class="a3-grid-platos">
+      
+      <!-- 1. Ceviche (Diamante) -->
+      <div class="a3-plato-card" data-puesto="1">
+        <img src="img/plato-ceviche.jpg" alt="Ceviche">
+        <div class="a3-plato-info">
+          <span class="a3-badge diamante">💎 FAVORITO DE LA CASA</span>
+          <h3>Ceviche</h3>
+          
+          <!-- PORCENTAJES -->
+          <div class="a3-porcentajes">
+            <span class="a3-porc-a">85%</span>
+            <span class="a3-porc-b">15%</span>
+          </div>
+          <div class="a3-barras">
+            <div class="a3-barra-a" style="width: 85%;"></div>
+            <div class="a3-barra-b" style="width: 15%;"></div>
+          </div>
 
-      <article class="a3-pron tarjeta" data-a="48" data-b="52">
-        <p class="a3-votos">PRONÓSTICO · 160 MIL VOTOS</p>
-        <div class="a3-fila"><span>PARTICIPANTE 3</span><b class="a3-pa">48%</b></div>
-        <div class="a3-fila"><span>PARTICIPANTE 4</span><b class="a3-pb">52%</b></div>
-        <div class="a3-barra"><div class="a3-barra-a"></div><div class="a3-barra-b"></div></div>
-        <p class="a3-ganador">GANADOR: <strong>PARTICIPANTE 3</strong><br><small>DECISIÓN UNÁNIME (5-0)</small></p>
-        <button class="a3-votar">VOTAR</button>
-      </article>
+          <button class="a3-btn-votar" onclick="votarPlato(this)">VOTAR</button>
+        </div>
+      </div>
 
-      <article class="a3-pron tarjeta" data-a="32" data-b="68">
-        <p class="a3-votos">PRONÓSTICO · 148 MIL VOTOS</p>
-        <div class="a3-fila"><span>PARTICIPANTE 5</span><b class="a3-pa">32%</b></div>
-        <div class="a3-fila"><span>PARTICIPANTE 6</span><b class="a3-pb">68%</b></div>
-        <div class="a3-barra"><div class="a3-barra-a"></div><div class="a3-barra-b"></div></div>
-        <p class="a3-ganador">GANADOR: <strong>PARTICIPANTE 6</strong><br><small>DECISIÓN UNÁNIME (5-0)</small></p>
-        <button class="a3-votar">VOTAR</button>
-      </article>
+      <!-- 2. Pollo a la Brasa (Dorado) -->
+      <div class="a3-plato-card" data-puesto="2">
+        <img src="img/plato-pollo-brasa.jpg" alt="Pollo a la Brasa">
+        <div class="a3-plato-info">
+          <span class="a3-badge dorado">🥇 PUESTO 2</span>
+          <h3>Pollo a la Brasa</h3>
+          
+          <div class="a3-porcentajes">
+            <span class="a3-porc-a">78%</span>
+            <span class="a3-porc-b">22%</span>
+          </div>
+          <div class="a3-barras">
+            <div class="a3-barra-a" style="width: 78%;"></div>
+            <div class="a3-barra-b" style="width: 22%;"></div>
+          </div>
+
+          <button class="a3-btn-votar" onclick="votarPlato(this)">VOTAR</button>
+        </div>
+      </div>
+
+      <!-- 3. Lomo Saltado (Plata) -->
+      <div class="a3-plato-card" data-puesto="3">
+        <img src="img/plato-lomo-saltado.jpg" alt="Lomo Saltado">
+        <div class="a3-plato-info">
+          <span class="a3-badge plata">🥈 PUESTO 3</span>
+          <h3>Lomo Saltado</h3>
+          
+          <div class="a3-porcentajes">
+            <span class="a3-porc-a">65%</span>
+            <span class="a3-porc-b">35%</span>
+          </div>
+          <div class="a3-barras">
+            <div class="a3-barra-a" style="width: 65%;"></div>
+            <div class="a3-barra-b" style="width: 35%;"></div>
+          </div>
+
+          <button class="a3-btn-votar" onclick="votarPlato(this)">VOTAR</button>
+        </div>
+      </div>
+
+      <!-- 4. Pachamanca (Bronce) -->
+      <div class="a3-plato-card" data-puesto="4">
+        <img src="img/plato-pachamanca.jpg" alt="Pachamanca">
+        <div class="a3-plato-info">
+          <span class="a3-badge bronce">🥉 PUESTO 4</span>
+          <h3>Pachamanca</h3>
+          
+          <div class="a3-porcentajes">
+            <span class="a3-porc-a">52%</span>
+            <span class="a3-porc-b">48%</span>
+          </div>
+          <div class="a3-barras">
+            <div class="a3-barra-a" style="width: 52%;"></div>
+            <div class="a3-barra-b" style="width: 48%;"></div>
+          </div>
+
+          <button class="a3-btn-votar" onclick="votarPlato(this)">VOTAR</button>
+        </div>
+      </div>
+
+      <!-- 5. Caldo de Mote -->
+      <div class="a3-plato-card">
+        <img src="img/plato-caldo-mote.jpg" alt="Caldo de Mote">
+        <div class="a3-plato-info">
+          <h3>Caldo de Mote</h3>
+          
+          <div class="a3-porcentajes">
+            <span class="a3-porc-a">45%</span>
+            <span class="a3-porc-b">55%</span>
+          </div>
+          <div class="a3-barras">
+            <div class="a3-barra-a" style="width: 45%;"></div>
+            <div class="a3-barra-b" style="width: 55%;"></div>
+          </div>
+
+          <button class="a3-btn-votar" onclick="votarPlato(this)">VOTAR</button>
+        </div>
+      </div>
+
+      <!-- 6. Chaufa -->
+      <div class="a3-plato-card">
+        <img src="img/plato-chaufa.jpg" alt="Chaufa">
+        <div class="a3-plato-info">
+          <h3>Chaufa</h3>
+          
+          <div class="a3-porcentajes">
+            <span class="a3-porc-a">60%</span>
+            <span class="a3-porc-b">40%</span>
+          </div>
+          <div class="a3-barras">
+            <div class="a3-barra-a" style="width: 60%;"></div>
+            <div class="a3-barra-b" style="width: 40%;"></div>
+          </div>
+
+          <button class="a3-btn-votar" onclick="votarPlato(this)">VOTAR</button>
+        </div>
+      </div>
+
+      <!-- 7. Rocoto Relleno -->
+      <div class="a3-plato-card">
+        <img src="img/plato-rocoto-relleno.jpg" alt="Rocoto Relleno">
+        <div class="a3-plato-info">
+          <h3>Rocoto Relleno</h3>
+          
+          <div class="a3-porcentajes">
+            <span class="a3-porc-a">48%</span>
+            <span class="a3-porc-b">52%</span>
+          </div>
+          <div class="a3-barras">
+            <div class="a3-barra-a" style="width: 48%;"></div>
+            <div class="a3-barra-b" style="width: 52%;"></div>
+          </div>
+
+          <button class="a3-btn-votar" onclick="votarPlato(this)">VOTAR</button>
+        </div>
+      </div>
+
+      <!-- 8. Picante de Cuy -->
+      <div class="a3-plato-card">
+        <img src="img/plato-picante-cuy.jpg" alt="Picante de Cuy">
+        <div class="a3-plato-info">
+          <h3>Picante de Cuy</h3>
+          
+          <div class="a3-porcentajes">
+            <span class="a3-porc-a">40%</span>
+            <span class="a3-porc-b">60%</span>
+          </div>
+          <div class="a3-barras">
+            <div class="a3-barra-a" style="width: 40%;"></div>
+            <div class="a3-barra-b" style="width: 60%;"></div>
+          </div>
+
+          <button class="a3-btn-votar" onclick="votarPlato(this)">VOTAR</button>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
+<!-- SECCIÓN 2: COMBOS -->
 <section class="seccion a3-seccion" id="combates">
   <div class="contenedor">
-    <p class="eyebrow">RESULTADOS OFICIALES</p>
-    <h2 class="titulo-seccion">COMBATES</h2>
-    <p class="subtitulo-seccion">GANADORES Y TARJETAS DE LOS JUECES</p>
+    <p class="eyebrow">OFERTAS ESPECIALES</p>
+    <h2 class="titulo-seccion">NUESTROS COMBOS</h2>
+    <p class="subtitulo-seccion">DELICIOSAS COMBINACIONES PARA COMPARTIR</p>
 
-    <div class="a3-combates">
-      <!-- La clase .ganador marca al ganador con ★ -->
-      <article class="a3-combate tarjeta">
-        <span class="a3-num">01</span>
-        <div class="a3-lado ganador">Participante 1</div>
-        <div class="a3-vs">VS</div>
-        <div class="a3-lado">Participante 2</div>
-        <p class="a3-decision">DECISIÓN DIVIDIDA (3-2)</p>
+    <div class="a3-lista-combos">
+      <article class="a3-combo-card">
+        <div class="a3-combo-info">
+          <h3>Combo Marino Clásico</h3>
+          <p>Ceviche + Leche de Tigre + Arroz con Mariscos</p>
+          <span class="a3-precio">S/ 45.00</span>
+        </div>
+        <div class="a3-combo-img"><img src="img/combo-marino-clasico.jpg" alt="Combo"></div>
       </article>
-      <article class="a3-combate tarjeta">
-        <span class="a3-num">02</span>
-        <div class="a3-lado">Participante 3</div>
-        <div class="a3-vs">VS</div>
-        <div class="a3-lado ganador">Participante 4</div>
-        <p class="a3-decision">DECISIÓN UNÁNIME (5-0)</p>
+      <article class="a3-combo-card">
+        <div class="a3-combo-info">
+          <h3>Combo Marino Especial</h3>
+          <p>Ceviche de conchas negras + Chupe de Mariscos + Jalea Mixta</p>
+          <span class="a3-precio">S/ 68.00</span>
+        </div>
+        <div class="a3-combo-img"><img src="img/combo-marino-especial.jpg" alt="Combo"></div>
       </article>
-      <article class="a3-combate tarjeta">
-        <span class="a3-num">03</span>
-        <div class="a3-lado ganador">Participante 5</div>
-        <div class="a3-vs">VS</div>
-        <div class="a3-lado">Participante 6</div>
-        <p class="a3-decision">DECISIÓN DIVIDIDA (4-1)</p>
+      <article class="a3-combo-card">
+        <div class="a3-combo-info">
+          <h3>Combo El Más Rápido</h3>
+          <p>2 Hamburguesas + Pizza + Coca-Cola 2L</p>
+          <span class="a3-precio">S/ 39.90</span>
+        </div>
+        <div class="a3-combo-img"><img src="img/combo-mas-rapido.jpg" alt="Combo"></div>
       </article>
-      <article class="a3-combate tarjeta">
-        <span class="a3-num">04</span>
-        <div class="a3-lado">Participante 7</div>
-        <div class="a3-vs">VS</div>
-        <div class="a3-lado ganador">Participante 8</div>
-        <p class="a3-decision">DECISIÓN UNÁNIME (5-0)</p>
+      <article class="a3-combo-card">
+        <div class="a3-combo-info">
+          <h3>Combo Lomo Saltado Clásico</h3>
+          <p>Lomo Saltado + Lomo a lo pobre + 1L Chicha Morada</p>
+          <span class="a3-precio">S/ 55.00</span>
+        </div>
+        <div class="a3-combo-img"><img src="img/combo-lomo-clasico.jpg" alt="Combo"></div>
       </article>
-      <article class="a3-combate tarjeta">
-        <span class="a3-num">05</span>
-        <div class="a3-lado ganador">Participante 9</div>
-        <div class="a3-vs">VS</div>
-        <div class="a3-lado">Participante 10</div>
-        <p class="a3-decision">DECISIÓN UNÁNIME (5-0)</p>
+      <article class="a3-combo-card">
+        <div class="a3-combo-info">
+          <h3>Combo Costeño</h3>
+          <p>Causa Rellena + Chupe de camarones + 1L Chicha Morada</p>
+          <span class="a3-precio">S/ 48.00</span>
+        </div>
+        <div class="a3-combo-img"><img src="img/combo-costeno.jpg" alt="Combo"></div>
+      </article>
+      <article class="a3-combo-card">
+        <div class="a3-combo-info">
+          <h3>Combo Especial de Papa</h3>
+          <p>Papa a la Huancaína + Papa Rellena + 1L Chicha Morada</p>
+          <span class="a3-precio">S/ 32.00</span>
+        </div>
+        <div class="a3-combo-img"><img src="img/combo-especial-papa.jpg" alt="Combo"></div>
+      </article>
+      <article class="a3-combo-card">
+        <div class="a3-combo-info">
+          <h3>Combo La Fritura</h3>
+          <p>Salchipapa + Pollo Broster + Pollo a la Brasa</p>
+          <span class="a3-precio">S/ 65.00</span>
+        </div>
+        <div class="a3-combo-img"><img src="img/combo-la-fritura.jpg" alt="Combo"></div>
+      </article>
+      <article class="a3-combo-card">
+        <div class="a3-combo-info">
+          <h3>Combo Fiesta de Postres</h3>
+          <p>Mazamorra c/ Arroz con leche + Pastel de Gelatina + 3 bolas de Helado</p>
+          <span class="a3-precio">S/ 28.00</span>
+        </div>
+        <div class="a3-combo-img"><img src="img/combo-postres.jpg" alt="Combo"></div>
       </article>
     </div>
-    <div class="centrado"><a href="#combates" class="btn">VER CARTELERA COMPLETA</a></div>
   </div>
 </section>

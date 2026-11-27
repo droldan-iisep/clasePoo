@@ -1,31 +1,140 @@
-/* ALUMNO 3 - Pronósticos + Combates. Usa solo clases que empiecen con .a3- */
-.a3-pronosticos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
-.a3-pron { padding: 24px; }
-.a3-votos { font-size: .75rem; letter-spacing: 2px; color: var(--gris); margin-bottom: 16px; }
-.a3-fila { display: flex; justify-content: space-between; font-family: var(--fuente-titulo); font-weight: 700; margin-bottom: 6px; }
-.a3-pa { color: var(--rojo); }
-.a3-pb { color: var(--azul); }
-.a3-barra { display: flex; height: 10px; border-radius: 999px; overflow: hidden; background: var(--fondo-3); margin: 12px 0 18px; }
-.a3-barra-a { background: var(--rojo); width: 50%; transition: width .8s; }
-.a3-barra-b { background: var(--azul); width: 50%; transition: width .8s; }
-.a3-ganador { font-family: var(--fuente-titulo); font-size: .9rem; margin-bottom: 16px; }
-.a3-ganador strong { color: var(--dorado-claro); }
-.a3-ganador small { color: var(--gris); }
-.a3-votar { width: 100%; padding: 10px; border: 1px solid var(--dorado); background: transparent; color: var(--dorado-claro); font-family: var(--fuente-titulo); letter-spacing: 2px; border-radius: 999px; cursor: pointer; }
-.a3-votar:hover { background: var(--dorado); color: var(--fondo); }
+/* Importación de librerías */
+@import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");
 
-.a3-combates { display: flex; flex-direction: column; gap: 16px; }
-.a3-combate {
-  display: grid; grid-template-columns: 60px 1fr 60px 1fr; align-items: center;
-  padding: 20px 24px; gap: 10px; text-align: center;
+:root {
+  --a3-bg-dark: #111827;
+  --a3-dorado: #d4af37;
+  --a3-texto: #f8fafc;
+  --a3-gris: #94a3b8;
+  --a3-card-bg: #1e293b;
+  --a3-diamante: #22d3ee;
+  --a3-oro: #fbbf24;
+  --a3-plata: #cbd5e1;
+  --a3-bronce: #b45309;
 }
-.a3-num { font-family: var(--fuente-titulo); font-size: 2rem; font-weight: 900; color: var(--dorado); }
-.a3-lado { font-family: var(--fuente-titulo); font-weight: 700; font-size: 1.1rem; color: var(--gris); }
-.a3-lado.ganador { color: var(--dorado-claro); }
-.a3-lado.ganador::before { content: '★ '; color: var(--dorado); }
-.a3-vs { font-family: var(--fuente-titulo); font-weight: 900; color: var(--rojo); }
-.a3-decision { grid-column: 1 / -1; font-size: .75rem; letter-spacing: 2px; color: var(--gris); }
 
-@media (max-width: 600px) {
-  .a3-combate { grid-template-columns: 1fr; }
+.a3-seccion { background-color: var(--a3-bg-dark) !important; padding: 60px 0 !important; font-family: 'Poppins', sans-serif; }
+.titulo-seccion { color: var(--a3-texto) !important; font-weight: 800; text-align: center; font-size: 2.5rem; margin-bottom: 10px; }
+.subtitulo-seccion { color: var(--a3-gris) !important; text-align: center; margin-bottom: 40px; font-size: 1rem; }
+
+/* =========================================
+   1. DUELO DE SABORES (GRID Y BARRAS)
+   ========================================= */
+.a3-grid-platos {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.a3-plato-card {
+  background: var(--a3-card-bg) !important;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex !important; flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  position: relative;
+}
+.a3-plato-card:hover { transform: translateY(-10px); }
+.a3-plato-card img { width: 100%; height: 180px; object-fit: cover; }
+.a3-plato-info { padding: 20px; text-align: center; display: flex; flex-direction: column; justify-content: space-between; flex: 1; }
+.a3-plato-info h3 { color: var(--a3-texto) !important; font-size: 1.4rem; margin: 10px 0; }
+
+/* Barras y Porcentajes */
+.a3-porcentajes { display: flex; justify-content: space-between; font-weight: bold; font-size: 0.9rem; margin-bottom: 5px; }
+.a3-porc-a { color: var(--a3-dorado); }
+.a3-porc-b { color: var(--a3-gris); }
+
+.a3-barras { 
+  display: flex; 
+  height: 8px; 
+  border-radius: 10px; 
+  overflow: hidden; 
+  background: #334155; 
+  margin-bottom: 20px; 
+}
+.a3-barra-a { background: var(--a3-dorado); transition: width 0.5s; }
+.a3-barra-b { background: #64748b; transition: width 0.5s; }
+
+/* Colores de barras según el podio */
+.a3-plato-card[data-puesto="1"] .a3-barra-a { background: var(--a3-diamante); }
+.a3-plato-card[data-puesto="2"] .a3-barra-a { background: var(--a3-oro); }
+.a3-plato-card[data-puesto="3"] .a3-barra-a { background: var(--a3-plata); }
+.a3-plato-card[data-puesto="4"] .a3-barra-a { background: var(--a3-bronce); }
+
+/* Bordes de Luz */
+.a3-plato-card[data-puesto="1"] { box-shadow: 0 0 20px var(--a3-diamante) !important; border: 2px solid var(--a3-diamante) !important; }
+.a3-plato-card[data-puesto="2"] { box-shadow: 0 0 20px var(--a3-oro) !important; border: 2px solid var(--a3-oro) !important; }
+.a3-plato-card[data-puesto="3"] { box-shadow: 0 0 20px var(--a3-plata) !important; border: 2px solid var(--a3-plata) !important; }
+.a3-plato-card[data-puesto="4"] { box-shadow: 0 0 20px var(--a3-bronce) !important; border: 2px solid var(--a3-bronce) !important; }
+
+.a3-badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 800; background: var(--a3-bg-dark) !important; align-self: center; }
+.a3-badge.diamante { color: var(--a3-diamante) !important; border: 1px solid var(--a3-diamante) !important; }
+.a3-badge.dorado { color: var(--a3-oro) !important; border: 1px solid var(--a3-oro) !important; }
+.a3-badge.plata { color: var(--a3-plata) !important; border: 1px solid var(--a3-plata) !important; }
+.a3-badge.bronce { color: var(--a3-bronce) !important; border: 1px solid var(--a3-bronce) !important; }
+
+.a3-btn-votar { 
+  background: var(--a3-dorado) !important; color: var(--a3-bg-dark) !important; 
+  border: none; padding: 12px; border-radius: 30px; font-weight: bold; cursor: pointer; transition: 0.3s; width: 100%;
+}
+.a3-btn-votar:hover { background: #fbbf24 !important; transform: scale(1.02); }
+.a3-btn-votar:disabled { background: #475569 !important; color: #94a3b8 !important; cursor: not-allowed; transform: none; }
+
+/* =========================================
+   2. COMBOS
+   ========================================= */
+.a3-lista-combos { display: flex !important; flex-direction: column; gap: 20px; max-width: 900px; margin: 0 auto; }
+.a3-combo-card { display: flex !important; background: var(--a3-card-bg) !important; border-radius: 15px; overflow: hidden; border: 1px solid #334155; transition: 0.3s; }
+.a3-combo-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.5); border-color: var(--a3-dorado); }
+.a3-combo-info { flex: 1; padding: 25px; display: flex !important; flex-direction: column; justify-content: center; }
+.a3-combo-info h3 { color: var(--a3-dorado) !important; font-size: 1.5rem; margin-bottom: 10px; }
+.a3-combo-info p { color: var(--a3-gris) !important; font-size: 1rem; margin-bottom: 15px; }
+.a3-precio { color: var(--a3-texto) !important; font-size: 1.4rem; font-weight: 800; }
+.a3-combo-img { width: 35%; min-width: 200px; }
+.a3-combo-img img { width: 100%; height: 100%; object-fit: cover; }
+
+@media (max-width: 768px) {
+  .a3-combo-card { flex-direction: column; }
+  .a3-combo-img { width: 100%; height: 200px; }
+}
+
+/* =========================================
+   EFECTO DE LUZ (GLOW) EN LAS BARRAS DE PORCENTAJE
+   ========================================= */
+
+/* Barras base */
+.a3-barra-a { transition: width 0.5s; }
+.a3-barra-b { background: #64748b; transition: width 0.5s; }
+
+/* 1. Ceviche - Brillo Diamante Intenso */
+.a3-plato-card[data-puesto="1"] .a3-barra-a { 
+  background: var(--a3-diamante); 
+  filter: drop-shadow(0 0 8px var(--a3-diamante)) drop-shadow(0 0 15px var(--a3-diamante));
+}
+
+/* 2. Pollo a la Brasa - Brillo Oro Intenso */
+.a3-plato-card[data-puesto="2"] .a3-barra-a { 
+  background: var(--a3-oro); 
+  filter: drop-shadow(0 0 8px var(--a3-oro)) drop-shadow(0 0 15px var(--a3-oro));
+}
+
+/* 3. Lomo Saltado - Brillo Plata Intenso */
+.a3-plato-card[data-puesto="3"] .a3-barra-a { 
+  background: var(--a3-plata); 
+  filter: drop-shadow(0 0 8px var(--a3-plata)) drop-shadow(0 0 15px var(--a3-plata));
+}
+
+/* 4. Pachamanca - Brillo Bronce Intenso */
+.a3-plato-card[data-puesto="4"] .a3-barra-a { 
+  background: var(--a3-bronce); 
+  filter: drop-shadow(0 0 8px var(--a3-bronce)) drop-shadow(0 0 15px var(--a3-bronce));
+}
+
+/* Participantes normales - Brillo Dorado */
+.a3-plato-card:not([data-puesto]) .a3-barra-a { 
+  background: var(--a3-dorado); 
+  filter: drop-shadow(0 0 8px var(--a3-dorado)) drop-shadow(0 0 15px var(--a3-dorado));
 }

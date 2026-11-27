@@ -1,11 +1,50 @@
-<!-- ======== ALUMNO 4: PATROCINADORES + VIDEOS + SEDE ======== -->
+<!-- ======== ALUMNO 4: MENÚ + PATROCINADORES + VIDEOS + SEDE ======== -->
+
+<!-- 1. SECCIÓN DEL MENÚ -->
+<section class="seccion a4-seccion" id="menu">
+  <div class="contenedor">
+    <p class="eyebrow">NUESTRA CARTA</p>
+    <h2 class="titulo-seccion">PLATOS ESTRELLA</h2>
+    <p class="subtitulo-seccion">DELICIAS PREPARADAS POR NUESTROS CHEFS</p>
+    
+    <div class="a4-menu-grid">
+      <div class="a4-plato tarjeta">
+        <div class="a4-plato-img" style="background-image: url('https://images.unsplash.com/photo-1544025162-d76694265947?w=600');"></div>
+        <div class="a4-plato-info">
+          <h3>Lomo Saltado</h3>
+          <p class="a4-plato-desc">Jugosa carne de res salteada con cebolla, tomate y papas fritas.</p>
+          <p class="a4-plato-precio">S/ 45.00</p>
+        </div>
+      </div>
+      
+      <div class="a4-plato tarjeta">
+        <div class="a4-plato-img" style="background-image: url('https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=600');"></div>
+        <div class="a4-plato-info">
+          <h3>Ceviche Clásico</h3>
+          <p class="a4-plato-desc">Pescado fresco marinado en limón, ají limo y cebolla roja.</p>
+          <p class="a4-plato-precio">S/ 38.00</p>
+        </div>
+      </div>
+      
+      <div class="a4-plato tarjeta">
+        <div class="a4-plato-img" style="background-image: url('https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=600');"></div>
+        <div class="a4-plato-info">
+          <h3>Pasta Alfredo</h3>
+          <p class="a4-plato-desc">Fettuccine en salsa cremosa de parmesano y mantequilla.</p>
+          <p class="a4-plato-precio">S/ 32.00</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. SECCIÓN DE PATROCINADORES -->
 <section class="seccion a4-seccion" id="patrocinadores">
   <div class="contenedor">
     <h2 class="titulo-seccion">PATROCINADORES</h2>
     <p class="subtitulo-seccion">LAS MARCAS QUE HACEN POSIBLE NUESTRA COCINA</p>
     
     <div class="a4-marcas">
-      <!-- Ahora cada marca es un enlace a su sitio oficial -->
       <a href="https://www.coca-cola.com" target="_blank" class="a4-marca">
         <span class="a4-marca-nombre">Coca-Cola</span>
         <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=200&q=80" alt="Coca-Cola">
@@ -57,27 +96,25 @@
   </div>
 </section>
 
+<!-- 3. SECCIÓN DE VIDEOS -->
 <section class="seccion a4-seccion" id="videos">
   <div class="contenedor">
     <h2 class="titulo-seccion">VÍDEOS</h2>
     <p class="subtitulo-seccion">CONOCE NUESTRA COCINA Y NUESTROS PLATILLOS</p>
     
     <div class="a4-videos">
-      <!-- Video 1: Preparación -->
       <article class="a4-video tarjeta" data-youtube="sWXRJbGi6yQ">
         <div class="a4-mini" style="background-image: url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600');">▶</div>
         <h3>NUESTRA PREPARACIÓN</h3>
         <span class="btn">VER VÍDEO</span>
       </article>
       
-      <!-- Video 2: El Ambiente -->
       <article class="a4-video tarjeta" data-youtube="rkClfyzeIEA">
         <div class="a4-mini" style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600');">▶</div>
         <h3>EL AMBIENTE</h3>
         <span class="btn">VER VÍDEO</span>
       </article>
       
-      <!-- Video 3: Ingredientes Frescos -->
       <article class="a4-video tarjeta" data-youtube="TOc8LSb4DG8">
         <div class="a4-mini" style="background-image: url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600');">▶</div>
         <h3>INGREDIENTES FRESCOS</h3>
@@ -95,6 +132,7 @@
   </div>
 </section>
 
+<!-- 4. SECCIÓN DE LA SEDE -->
 <section class="seccion a4-seccion" id="sede">
   <div class="contenedor">
     <p class="eyebrow">UBICACIÓN DEL RESTAURANTE</p>
@@ -113,3 +151,8 @@
     </div>
   </div>
 </section>
+
+<!-- 5. BOTÓN FLOTANTE DE RESERVAS -->
+<button class="a4-btn-flotante" id="btn-reserva">
+  🍽️ Reservar Mesa
+</button>
